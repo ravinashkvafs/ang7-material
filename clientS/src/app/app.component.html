@@ -104,18 +104,123 @@
       </div>
     </mat-toolbar>
   </div>
-  <div style="margin-top: 6%;" fxLayout fxLayoutAlign="start center">
-    <mat-drawer-container class="example-container">
-      <mat-drawer mode="side" opened>
-        <mat-card fxLayout="column" fxLayoutAlign="start center">
-          ASD
+  <div>
+    <mat-sidenav-container fxLayout fxLayoutAlign="start center" style="margin-top: 70px; background: white;"
+      fullscreen>
+      <mat-sidenav mode="side" opened fxFlex="20" fxShow fxHide.lt-md>
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Shiba Inu</mat-card-title>
+            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+          <mat-card-content>
+            <p>
+              The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+              A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+              bred for hunting.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+          </mat-card-actions>
         </mat-card>
-      </mat-drawer>
-      <mat-drawer-content>
-        <div>
-          ghbkjlm;
+
+      </mat-sidenav>
+      <mat-sidenav-content fxFill style="margin-top: 70px;">
+        <div style="padding: 20px;">
+          Main content
+          <mat-icon matBadge="15" matBadgeColor="warn">home</mat-icon>
+          <h3>Basic Buttons</h3>
+          <div class="example-button-row">
+            <button mat-button>Basic</button>
+            <button mat-button color="primary">Primary</button>
+            <button mat-button color="accent">Accent</button>
+            <button mat-button color="warn">Warn</button>
+            <button mat-button disabled>Disabled</button>
+            <a mat-button routerLink=".">Link</a>
+          </div>
+
+          <h3>Raised Buttons</h3>
+          <div class="example-button-row">
+            <button mat-raised-button>Basic</button>
+            <button mat-raised-button color="primary">Primary</button>
+            <button mat-raised-button color="accent">Accent</button>
+            <button mat-raised-button color="warn">Warn</button>
+            <button mat-raised-button disabled>Disabled</button>
+            <a mat-raised-button routerLink=".">Link</a>
+          </div>
+
+          <h3>Stroked Buttons</h3>
+          <div class="example-button-row">
+            <button mat-stroked-button>Basic</button>
+            <button mat-stroked-button color="primary">Primary</button>
+            <button mat-stroked-button color="accent">Accent</button>
+            <button mat-stroked-button color="warn">Warn</button>
+            <button mat-stroked-button disabled>Disabled</button>
+            <a mat-stroked-button routerLink=".">Link</a>
+          </div>
+
+          <h3>Flat Buttons</h3>
+          <div class="example-button-row">
+            <button mat-flat-button>Basic</button>
+            <button mat-flat-button color="primary">Primary</button>
+            <button mat-flat-button color="accent">Accent</button>
+            <button mat-flat-button color="warn">Warn</button>
+            <button mat-flat-button disabled>Disabled</button>
+            <a mat-flat-button routerLink=".">Link</a>
+          </div>
+
+          <h3>Icon Buttons</h3>
+          <div class="example-button-row">
+            <button mat-icon-button>
+              <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+            </button>
+            <button mat-icon-button color="primary">
+              <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+            </button>
+            <button mat-icon-button color="accent">
+              <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+            </button>
+            <button mat-icon-button color="warn">
+              <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+            </button>
+            <button mat-icon-button disabled>
+              <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+            </button>
+          </div>
+
+          <h3>Fab Buttons</h3>
+          <div class="example-button-row">
+            <button mat-fab>Basic</button>
+            <button mat-fab color="primary">Primary</button>
+            <button mat-fab color="accent">Accent</button>
+            <button mat-fab color="warn">Warn</button>
+            <button mat-fab disabled>Disabled</button>
+            <button mat-fab>
+              <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+            </button>
+            <a mat-fab routerLink=".">Link</a>
+          </div>
+
+          <h3>Mini Fab Buttons</h3>
+          <div class="example-button-row">
+            <button mat-mini-fab>Basic</button>
+            <button mat-mini-fab color="primary">Primary</button>
+            <button mat-mini-fab color="accent">Accent</button>
+            <button mat-mini-fab color="warn">Warn</button>
+            <button mat-mini-fab disabled>Disabled</button>
+            <button mat-mini-fab>
+              <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+            </button>
+            <a mat-mini-fab routerLink=".">Link</a>
+          </div>
+
         </div>
-      </mat-drawer-content>
-    </mat-drawer-container>
+
+      </mat-sidenav-content>
+    </mat-sidenav-container>
   </div>
 </div>
