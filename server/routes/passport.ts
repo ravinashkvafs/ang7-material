@@ -10,7 +10,7 @@ const ExtractJWT = passportJWT.ExtractJwt;
 const User = require('../models/users');
 
 passport.use(new LocalStrategy({ usernameField: 'loginid' }, async (loginid, password, cb) => {
-    const foundUser = await User.findOne({ loginid: new RegExp('^' + loginid + '$', 'i') }, { loginid: 1, password: 1, fullname: 1, role: 1, isActive: 1, isExit: 1 });
+    const foundUser = await User.findOne({ loginid: loginid.toLowerCase() }, { loginid: 1, password: 1, fullname: 1, role: 1, isActive: 1, isExit: 1 });
 
     if (foundUser) {
         if (foundUser.isActive && !foundUser.isExit)

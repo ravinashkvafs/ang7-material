@@ -1,5 +1,7 @@
+$theme_dark: #406ABA;
 $theme_color: #4083F2;
 $theme_shade: #40AFE5;
+$theme_excel: #00C851;
 
 .custom_theme_bg{
     // background-color: #4083F2;
@@ -10,6 +12,26 @@ $theme_shade: #40AFE5;
 
 .custom_theme_color{
     color: $theme_color;
+}
+
+.custom_theme_btn{
+    background: $theme_color;
+    color: white;
+    &:hover,
+    &:focus{
+        background-color: $theme_dark;
+    }
+}
+
+.custom_success_btn{
+    background: $theme_excel;
+    color: white;
+}
+
+// ::-moz-selection { @extend .custom_theme_bg;  }
+::selection { 
+    // @extend .custom_theme_bg;
+    background: $theme_excel;
 }
 
 .custom_span{
@@ -110,7 +132,7 @@ mat-sidenav-container{
     font-weight: bold;
 }
 
-@media only screen and (min-width: 961px) {
+@media only screen and (min-width: 960px) {
     /* For web: */
     .logo_bg{
         width: 100px;
@@ -123,7 +145,7 @@ mat-sidenav-container{
     }
 }
 
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 959px) {
     /* For mobile phones: */
     .logo_bg{
         // width: 50px;

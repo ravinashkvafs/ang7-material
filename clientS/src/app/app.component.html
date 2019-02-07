@@ -32,9 +32,9 @@
       </div>
       <div fxLayout fxLayoutAlign="end center">
         <div fxShow fxHide.lt-md>
-          <span class="custom_span">
+          <span class="custom_span" (click)="openDialog()">
             <mat-icon class="custom_icon">launch</mat-icon>
-            Logout
+            Sign-out
           </span>
         </div>
         <div fxShow fxHide.gt-sm>
@@ -134,13 +134,14 @@
       </mat-sidenav>
 
       <mat-sidenav-content fxFlex="1 0 auto">
-        <div class="fab-container">
+        <div class="fab-container" (mouseenter)="showItems()" (mouseleave)="hideItems()">
           <button mat-fab class="fab-toggler custom_theme_bg" (click)="onToggleFab()">
             <mat-icon>add</mat-icon>
           </button>
           <div>
             <button *ngFor="let btn of buttons" mat-mini-fab class="fab-secondary" color="secondary">
-              <mat-icon matBadge="{{btn.badgeCount}}" matBadgeColor="warn">{{btn.icon}}</mat-icon>
+              <mat-icon matTooltip="{{btn.tooltip}}" [matTooltipPosition]="'left'" matBadge="{{btn.badgeCount}}"
+                matBadgeColor="warn">{{btn.icon}}</mat-icon>
             </button>
           </div>
         </div>
@@ -211,7 +212,7 @@
 
                 <button mat-raised-button (click)="openBottomSheet()">Open Bottom Sheet</button>
 
-                <button mat-raised-button matTooltip="gh uygik j">Tooltip</button>
+                <button mat-raised-button matTooltip="gh uygik j" class="custom_theme_btn">Tooltip</button>
 
               </div>
 

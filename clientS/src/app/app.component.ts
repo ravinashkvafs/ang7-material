@@ -17,14 +17,18 @@ export class AppComponent {
   openDialog() {
     const dialogConfig = new MatDialogConfig();
 
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
+    // dialogConfig.disableClose = true;
+    // dialogConfig.autoFocus = true;
+    dialogConfig.data = { message: 'Are you sure want to Sign-out?' };
 
     const dialogRef = this.dialog.open(DialogComponent, dialogConfig);
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    dialogRef.afterClosed()
+      .subscribe(result => {
+        console.log(`Dialog result: ${result}`);
+        if (result)
+          alert('Sign-out Successfully!');
+      });
   }
 
   openBottomSheet(): void {
@@ -52,13 +56,14 @@ export class AppComponent {
   ];
 
   fabButtons = [
-    { icon: 'timeline' },
-    { icon: 'view_headline' },
-    { icon: 'room' },
-    { icon: 'lightbulb_outline' },
-    { icon: 'chat', badgeCount: 41 }
+    { icon: 'timeline', tooltip: 'Timeline' },
+    { icon: 'view_headline', tooltip: 'Headline' },
+    { icon: 'room', tooltip: 'Room' },
+    { icon: 'lightbulb_outline', tooltip: 'Bulb' },
+    { icon: 'chat', tooltip: 'Chat', badgeCount: 41 }
   ];
 
+  //fab toggler
   buttons = [];
   fabTogglerState = 'inactive';
 
