@@ -7,11 +7,13 @@ import { AppMaterialModule } from './app-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DialogComponent } from './dialog/dialog.component';
+import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DialogComponent
+    DialogComponent,
+    BottomSheetComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +22,7 @@ import { DialogComponent } from './dialog/dialog.component';
     BrowserAnimationsModule,
     FlexLayoutModule
   ],
-  entryComponents: [DialogComponent],
+  entryComponents: [DialogComponent, BottomSheetComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

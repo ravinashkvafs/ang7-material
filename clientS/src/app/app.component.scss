@@ -1,17 +1,17 @@
 $theme_color: #4083F2;
 $theme_shade: #40AFE5;
 
-//header
 .custom_theme_bg{
     // background-color: #4083F2;
     background: linear-gradient(to right, $theme_color 40%, $theme_shade 100%);
-    box-shadow: 0px 5px 5px #ccc;
     color: white;
-    // position: fixed;
     z-index: 100;
 }
 
-//menu element
+.custom_theme_color{
+    color: $theme_color;
+}
+
 .custom_span{
     text-align: center;
     display: inline-block;
@@ -46,16 +46,38 @@ $theme_shade: #40AFE5;
     line-height: 50px;
 }
 
-  .example-card {
+//can be deleted later
+.example-card {
     max-width: 400px;
-  }
+}
   
-  .example-header-image {
+.example-header-image {
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
     background-size: cover;
+}
+
+.example-h2 {
+    margin: 10px;
   }
   
-  .fab-container {
+  .example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  
+  .example-margin {
+    margin: 10px;
+  }
+//till here
+
+mat-sidenav-container{
+    margin-top: 70px;
+    background: white;
+}
+  
+.fab-container {
     position: fixed;
     bottom: 25px;
     right: 25px;
@@ -65,21 +87,28 @@ $theme_shade: #40AFE5;
     align-items: center;
   
     > div {
-      display: flex;
-      flex-direction: column-reverse;
-      align-items: center;
-      margin-bottom: 5px;
-  
-      button {
-        margin-bottom: 17px;
-      }
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        margin-bottom: 5px;
+    
+        button {
+            margin-bottom: 17px;
+        }
     }
-  }
+}
   
-  .fab-toggler {
+.fab-toggler {
     float: right;
     z-index: 100;
-  }
+}
+
+.snav-caption{
+    // display:inline-block;
+    padding: 0 10px 0 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
 
 @media only screen and (min-width: 961px) {
     /* For web: */
