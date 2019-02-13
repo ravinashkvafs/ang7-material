@@ -1,0 +1,15 @@
+
+
+@media only screen and (min-width: 960px) {
+    /* For web: */
+    .login-card-width {
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: 959px) {
+    /* For mobile phones: */
+    .login-card-width {
+        width: 90%;
+    }
+}
