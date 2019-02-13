@@ -21,6 +21,7 @@ export class OthersComponent {
 
     // dialogConfig.disableClose = true;
     // dialogConfig.autoFocus = true;
+    dialogConfig.width = '25vw';
     dialogConfig.data = { message: 'Are you sure want to Sign-out?' };
 
     const dialogRef = this.dialog.open(DialogComponent, dialogConfig);

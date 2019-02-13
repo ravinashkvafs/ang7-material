@@ -1,15 +1,49 @@
+$theme_dark: #406ABA;
+$theme_color: #4083F2;
+$theme_shade: #40AFE5;
 
+.bg-login{
+    background-image: url('../../../assets/images/bg1.jpg'); background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    height: 100%; 
+    width: 100%;
+}
+
+.custom_theme_btn{
+    background: $theme_color;
+    color: white;
+    &:hover,
+    &:focus{
+        background-color: $theme_dark;
+    }
+}
+
+.custom_link{
+    cursor: pointer; 
+    text-decoration: none; 
+    color: #666; 
+    font-weight: 500;
+}
+
+mat-form-field{
+    padding: 7px 5px;
+}
+
+mat-card-actions{
+    text-align: center;
+}
 
 @media only screen and (min-width: 960px) {
     /* For web: */
     .login-card-width {
-        width: 30%;
+        width: 30vw;
     }
 }
 
 @media only screen and (max-width: 959px) {
     /* For mobile phones: */
     .login-card-width {
-        width: 90%;
+        width: 60vw;
     }
 }

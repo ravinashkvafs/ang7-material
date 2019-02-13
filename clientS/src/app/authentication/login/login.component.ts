@@ -11,7 +11,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {
     this.form = fb.group({
-      loginid: ['', [Validators.required, Validators.minLength(6)]],
+      loginid: ['', [Validators.required, Validators.minLength(6), Validators.pattern('^[a-zA-Z]+')]],
       password: ['', [Validators.required, Validators.minLength(8)]]
     });
 
@@ -22,13 +22,14 @@ export class LoginComponent implements OnInit {
     // }, 10000);
   }
 
-  getErrorMessage(key) {
-    console.log(key, this.form.controls[key].valid, this.form.controls[key].hasError('required'))
-    if (this.form.get(key).hasError('required'))
-      return `${key} is mandatory!`;
-    console.log('yaha')
-    if (this.form.controls[key].hasError('minLength'))
-      return `Kindly fulfill need for ${key}`;
+  getErrorMessage(key, validator, len) {
+    switch (validator) {
+      case 'required': return `${key} is required!`;
+      case 'minLength': return `${key} length should be ${len} or more!`;
+      case 'maxLength': return `${key} length should be ${len} or less!`;
+      case 'pattern': return `${key} is not in proper format!`;
+      default: return `Error Undefined!`;
+    }
   }
 
   validateValue(key) {

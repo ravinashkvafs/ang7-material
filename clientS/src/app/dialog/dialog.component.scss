@@ -1,6 +1,46 @@
-$theme_excel: #00C851;
+$success: #3dcc9f;
+$success_dark: #2cb296;
+$failure: #e85f71;
+$failure_dark: #d74e60;
 
-.custom_success_btn{
-    background: $theme_excel;
+.custom_comic_font{
+    font-family: 'Comic Sans MS', comic, serif;
+    font-size: 1.9rem !important;
+    font-weight: 900;
+    text-align: center;
+    
+}
+
+.custom_content_font{
+    font-family: 'Courier New', courier, serif;
+    font-size: 1rem !important;
+    font-weight: bold;
+    text-align: center;
+    
+}
+
+div{
+    padding: 5px 0;
+}
+
+.success_btn{
+    background: $success;
+    width: 100%;
     color: white;
+    font-weight: bold;
+    &:hover,
+    &:focus{
+        background-color: $success_dark;
+    }
+}
+
+.failure_btn{
+    background: $failure;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    &:hover,
+    &:focus{
+        background-color: $failure_dark;
+    }
 }
