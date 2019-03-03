@@ -12,6 +12,14 @@ const dateFormat = require('../utility/date_format');
 const passportLocal = passport.authenticate('local', { session: false });
 const passportJwt = passport.authenticate('jwt', { session: false });
 
+Router.route('/test')
+    .get(async (req: Request, res: Response, next: NextFunction) => {
+        let test = new User();
+        test = await test.save();
+
+        resS.send(res, "Data !", test);
+    });
+
 Router.route('/')
     .get(passportJwt, Verify.verifyAdmin, Verify.verifyClient, Verify.verifyIsp, async (req: Request, res: Response, next: NextFunction) => {
         resS.send(res, "Data !", req['user']);
@@ -48,7 +56,7 @@ Router.route('/auth/login')
 
 Router.route('/auth/register')
     .post(async (req: Request, res: Response, next: NextFunction) => {
-        const existingUser = await User.findOne({ loginid: new RegExp('^' + req.body.loginid + '$', 'i') }, { _id: 0, loginid: 1 });
+        const existingUser = await User.findOne({ loginid: req.body.loginid.toLowerCase() }, { _id: 0, loginid: 1 });
 
         if (existingUser)
             resS.sendError(res, 409, "User Already Exists !", {});
@@ -57,7 +65,6 @@ Router.route('/auth/register')
 
             // const Schema = require('mongoose').Schema;
             const userD = new User(req.body);
-            console.log();
             // userD._id = new Schema.Types.ObjectId;
 
             const savedUser = await userD.save();

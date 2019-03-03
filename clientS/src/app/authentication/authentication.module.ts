@@ -8,7 +8,9 @@ import { AuthMaterialModule } from './auth-material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [
+    LoginComponent
+  ],
   imports: [
     CommonModule,
     AuthenticationRoutingModule,

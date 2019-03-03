@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { MatDialog, MatDialogConfig, MatBottomSheet } from '@angular/material';
-import { DialogComponent } from '../../dialog/dialog.component';
-import { BottomSheetComponent } from '../../bottom-sheet/bottom-sheet.component';
+import { DialogComponent } from '../../shared/dialog/dialog.component';
+import { BottomSheetComponent } from '../../shared/bottom-sheet/bottom-sheet.component';
 
 @Component({
   selector: 'app-others',
@@ -11,7 +11,9 @@ import { BottomSheetComponent } from '../../bottom-sheet/bottom-sheet.component'
 })
 export class OthersComponent {
 
-  constructor(public dialog: MatDialog, private bottomSheet: MatBottomSheet) { }
+  constructor(public dialog: MatDialog, private bottomSheet: MatBottomSheet) {
+    console.log('Loaded Others!');
+  }
 
   panelOpenState = false;
 

@@ -7,7 +7,7 @@ const resS = require('../utility/sendFormat');
 const jwt = require('jsonwebtoken');
 
 exports.getToken = (userD) => {
-    userD.iat = new Date(new Date().getTime() + (330 * 60 * 1000));
+    userD.iat = new Date().getTime();
     return jwt.sign(JSON.stringify(userD), process.env.TOKEN_CODE);
 };
 

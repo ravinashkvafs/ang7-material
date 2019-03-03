@@ -1,0 +1,17 @@
+<div fxLayout="column center">
+  <div style="text-align: center;">
+    <img src="../../assets/images/load_message_{{data.success?'success':'failure'}}.png" style="width: 160px;">
+    <!-- <img src="../../assets/images/load_message_failure.png" style="width: 160px;" *ngIf="!data.success"> -->
+  </div>
+
+  <div class="custom_comic_font">
+    <span>{{data.success ? 'Success!' : 'Failure!' }}</span>
+  </div>
+  <div class="custom_content_font">
+    <span>{{data.message}}</span>
+  </div>
+  <div>
+    <button mat-button [ngClass]="data.success ? 'success_btn' : 'failure_btn'" [mat-dialog-close]="'okay'" tabindex="-1">OKAY</button>
+  </div>
+
+</div>

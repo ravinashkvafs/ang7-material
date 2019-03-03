@@ -29,7 +29,7 @@ passport.use(new LocalStrategy({ usernameField: 'loginid' }, async (loginid, pas
         return cb(null, { success: false, status: 404, message: "User Doesn't Exists !" });
 }));
 
-passport.use(new JwtStrategy({ jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(), secretOrKey: process.env.TOKEN_CODE }, (jwtPayload, cb) => {
+passport.use(new JwtStrategy({ jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(), secretOrKey: process.env.TOKEN_CODE }, async (jwtPayload, cb) => {
     // console.log(jwtPayload);
     cb(null, jwtPayload);
 }));

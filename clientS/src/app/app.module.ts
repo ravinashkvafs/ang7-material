@@ -5,24 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppMaterialModule } from './app-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { DialogComponent } from './dialog/dialog.component';
-import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DialogComponent,
-    BottomSheetComponent
+    AppComponent
   ],
   imports: [
+    SharedModule,
     BrowserModule,
     AppRoutingModule,
     AppMaterialModule,
     BrowserAnimationsModule,
-    FlexLayoutModule
+    HttpClientModule
   ],
-  entryComponents: [DialogComponent, BottomSheetComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

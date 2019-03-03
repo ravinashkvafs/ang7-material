@@ -20,7 +20,7 @@ const UserSchema = new mongoose.Schema({
     isActive: { type: Boolean, default: true },
     isExit: { type: Boolean, default: false },
     doj: { type: Object, default: dateFormat.now }
-});
+}, { timestamps: true });
 
 UserSchema.methods.comparePassword = function (newPassword, cb) {
     bcrypt.compare(newPassword, this.password, (err, isMatched) => {
