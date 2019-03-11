@@ -13,7 +13,8 @@
             </span>
 
             <span *ngIf="mItem.menuTrigger">
-              <span class="custom_span" #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="menu" (mouseenter)="menuTrigger.openMenu()">
+              <span class="custom_span" #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="menu"
+                (mouseenter)="menuTrigger.openMenu()">
                 <!-- <mat-icon class="custom_icon">{{mItem.icon}}</mat-icon> -->
                 <mat-icon class="custom_icon" *ngIf="!menuTrigger.menuOpen">expand_more</mat-icon>
                 <mat-icon class="custom_icon" *ngIf="menuTrigger.menuOpen">expand_less</mat-icon>
@@ -185,7 +186,8 @@
                     <h2 class="example-h2">Result</h2>
 
                     <section class="example-section">
-                      <mat-slide-toggle class="example-margin" [color]="color" [checked]="checked" [disabled]="disabled">
+                      <mat-slide-toggle class="example-margin" [color]="color" [checked]="checked"
+                        [disabled]="disabled">
                         Slide me!
                       </mat-slide-toggle>
                     </section>

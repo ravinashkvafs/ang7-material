@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { MatToolbarModule, MatIconModule, MatMenuModule, MatSidenavModule, MatCardModule, MatBadgeModule, MatButtonModule, MatExpansionModule, MatDialogModule, MatListModule, MatSlideToggleModule, MatRadioModule, MatCheckboxModule, MatBottomSheetModule, MatTooltipModule } from '@angular/material';
+import { MatToolbarModule, MatIconModule, MatMenuModule, MatSidenavModule, MatCardModule, MatBadgeModule, MatButtonModule, MatExpansionModule, MatDialogModule, MatListModule, MatSlideToggleModule, MatRadioModule, MatCheckboxModule, MatBottomSheetModule, MatTooltipModule, MatProgressBarModule } from '@angular/material';
 
-const modules = [MatToolbarModule, MatIconModule, MatMenuModule, MatSidenavModule, MatCardModule, MatBadgeModule, MatButtonModule, MatExpansionModule, MatDialogModule, MatListModule, MatSlideToggleModule, MatRadioModule, MatCheckboxModule, MatBottomSheetModule, MatTooltipModule];
+const modules = [MatToolbarModule, MatIconModule, MatMenuModule, MatSidenavModule, MatCardModule, MatBadgeModule, MatButtonModule, MatExpansionModule, MatDialogModule, MatListModule, MatSlideToggleModule, MatRadioModule, MatCheckboxModule, MatBottomSheetModule, MatTooltipModule, MatProgressBarModule];
 
 @NgModule({
   imports: modules,

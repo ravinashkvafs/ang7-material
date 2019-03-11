@@ -1,13 +1,26 @@
-<div style="position: fixed;">
-    <img src="../../assets/images/slalom-logo-white-W.png" width="100px;" style="postion: fixed; z-index: 5;">
+<div fxLayout="column" style="height: 1000px;" id="body">
+    <div>
+        <mat-toolbar class="custom_theme_bg" fxLayout="row wrap" fxLayoutAlign="space-between center">
+            <div fxLayout fxLayoutAlign="space-between center">
+                <div class="logo_bg">
+                    <span style="padding: 0px 10px;"></span>
+                </div>
+                <div fxLayout fxLayoutAlign="start center" fxShow fxHide.lt-md>
+
+                </div>
+            </div>
+            <div fxLayout fxLayoutAlign="end center" fxLayoutGap="0.4rem">
+                <div>
+                    <button mat-button class="custom_theme_btn_blank">Basic</button>
+                </div>
+                <div>
+                    <button mat-flat-button class="custom_theme_btn">Tooltip</button>
+                </div>
+            </div>
+        </mat-toolbar>
+        <mat-progress-bar class="progress_bar" [value]="height_progress"></mat-progress-bar>
+    </div>
+    <div>
+
+    </div>
 </div>
-
-<div class="parallax_bg"></div>
-
-<div style="height:10000px;">
-    Scroll Up and Down this page to see the parallax scrolling effect.
-    This div is just here to enable scrolling.
-    Tip: Try to remove the background-attachment property to remove the scrolling effect.
-</div>
-
-<!-- <div [class.header]="down" style="height: 2000px"></div> -->

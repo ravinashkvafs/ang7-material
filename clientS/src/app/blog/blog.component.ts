@@ -11,23 +11,25 @@ export class BlogComponent implements OnInit {
     console.log('Loaded Blog!');
   }
 
-  ngOnInit() {
+  ngOnInit() { }
 
-  }
-
-  down: boolean = false;
+  height_progress: number = 0;
 
   @HostListener("window:scroll", [])
   onWindowScroll() {
+    const total_height = document.getElementById("body").scrollHeight;
 
-    const number = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    const non_visible_height = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
-    if (number > 500) {
-      this.down = true;
-      console.log('You are 500px from the top to bottom', number, window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
+    const visible_height = window.innerHeight;
+
+    this.height_progress = (non_visible_height / (total_height - visible_height)) * 100;
+
+    if (non_visible_height > 500 || true) {
+      console.log('You are 500px from the top to bottom');
     }
     // else
-    //   this.down = false;
+    //   this.height_progress = false;
 
   }
 }
