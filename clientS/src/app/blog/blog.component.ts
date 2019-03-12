@@ -6,12 +6,37 @@ import { Component, OnInit, HostListener } from '@angular/core';
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit {
+  messages = ['How are you ?', 'Hope you are fine...', 'Thanks for connecting with us !'];
+  rank = 0;
+  _h1;
+  cbType = (e) => {
+    this._h1 = document.getElementsByTagName("h1")[0];
+    this._h1.style.webkitAnimation = 'none';
+    setTimeout(() => {
+
+      this._h1.innerHTML = this.messages[this.rank];
+      let time = this.messages[this.rank].length / 4;
+
+      this._h1.style.webkitAnimation = `typewriter ${time}s steps(30) 1s 1 normal both`;
+
+      this.rank = (this.rank + 1) % this.messages.length;
+
+      console.log('time:', time, 'rank:', this.rank);
+    }, 1000);
+  };
+
 
   constructor() {
     console.log('Loaded Blog!');
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    // Code for Chrome, Safari and Opera
+    document.getElementById("myTypewriter").addEventListener("webkitAnimationEnd", this.cbType);
+
+    // Standard syntax
+    document.getElementById("myTypewriter").addEventListener("animationend", this.cbType);
+  }
 
   height_progress: number = 0;
 

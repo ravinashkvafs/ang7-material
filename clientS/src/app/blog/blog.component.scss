@@ -74,7 +74,7 @@ a{
 }
 
 /deep/ .mat-progress-bar-buffer {
-	background-color: white;	
+	background: rgba(0,0,0,0.1);	
 }
 
 .custom_theme_btn{
@@ -116,4 +116,28 @@ a{
 		height: 70px; 
 		padding: 0 10px;
 	}
+}
+
+/* Animation */
+.typewriter h1 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  // border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  // margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: typewriter 2s steps(30) 1s 1 normal both;
+						//  blinkTextCursor 500ms steps(30) infinite normal;
+}
+
+// .anim-typewriter{
+//   animation: typewriter 4s steps(44) 1s 1 normal both,
+// 						 blinkTextCursor 500ms steps(44) infinite normal;
+// }
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 12em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(256,0,0,.75);}
+  to{border-right-color: transparent;}
 }
