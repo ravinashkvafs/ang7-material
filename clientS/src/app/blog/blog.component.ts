@@ -6,7 +6,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit {
-  messages = ['How are you ?', 'Hope you are fine...', 'Thanks for connecting with us !'];
+  messages = ['Hello...', 'How are you ?', 'Hope you are fine...', 'Thanks for connecting with us !'];
   rank = 0;
   _h1;
   cbType = (e) => {
@@ -33,12 +33,30 @@ export class BlogComponent implements OnInit {
     console.log('Loaded Blog!');
   }
 
+  dynamic_statement: string = '';
+  closeI: any;
+  indx: number = 0;
+  eachC: number = -1;
+  increment: boolean = true;
+
   ngOnInit() {
     // Code for Chrome, Safari and Opera
     document.getElementById("myTypewriter").addEventListener("webkitAnimationEnd", this.cbType);
 
     // Standard syntax
     document.getElementById("myTypewriter").addEventListener("animationend", this.cbType);
+
+    this.closeI = setInterval(() => {
+
+      // console.log(this.increment, this.eachC, this.indx);
+      if (this.indx < this.messages.length) {
+        this.increment ? (this.eachC++ , this.eachC == this.messages[this.indx].length ? this.increment = false : null) : (this.eachC-- , this.eachC == 0 ? (this.increment = true, this.indx++) : null);
+
+        if (this.indx < this.messages.length)
+          this.dynamic_statement = this.messages[this.indx].slice(0, this.eachC);
+      }
+
+    }, 100);
   }
 
   height_progress: number = 0;
