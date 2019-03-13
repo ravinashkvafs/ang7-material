@@ -1,6 +1,7 @@
 .progress_bar{
-	position: fixed;
-	margin-top: 70px;	
+	// position: fixed;
+	// position: sticky; top:0;
+	// margin-top: 70px;	
 }
 
 .logo_bg{
@@ -40,27 +41,33 @@
 	}
 }
 
-@media only screen and (min-width: 960px) {
+@media (min-width: 960px) {
 	/* For web: */
 	.custom_theme_bg{
-    position: fixed;
+    // position: fixed;
     background: rgba(256,256,256, 0.4);
     color: white;
-		z-index: 100;
+		z-index: 2;
 		height: 70px; 
 		padding: 0 50px;
+		position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 	}
 }
 
-@media only screen and (max-width: 959px) {
+@media (max-width: 959px) {
 	/* For mobile phones: */
 	.custom_theme_bg{
-    position: fixed;
+    // position: fixed;
     background: rgba(256,256,256, 0.4);
     color: white;
-		z-index: 100;
+		z-index: 2;
 		height: 70px; 
 		padding: 0 10px;
+		position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 	}
 }
 
@@ -92,8 +99,8 @@
 }
 
 .container_panel{
-	margin-top: 75px;
-	height:  500px;
+	// margin-top: 75px;
+	height:  657px;
 }
 
 .half_panel{
@@ -102,11 +109,11 @@
 }
 
 .left_panel{
-	background: #ccc;
+	background: #e5e5e5;
 	color: white;
 }
 
 .right_panel{
-	background: #fff;
+	background: #eee;
 	color: black;
 }
