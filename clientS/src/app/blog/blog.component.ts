@@ -15,13 +15,16 @@ export class BlogComponent implements OnInit {
     setTimeout(() => {
 
       this._h1.innerHTML = this.messages[this.rank];
-      let time = this.messages[this.rank].length / 4;
+      let time = this.messages[this.rank].length * 0.25;
+      let steps = this.messages[this.rank].length * 3;
 
-      this._h1.style.webkitAnimation = `typewriter ${time}s steps(30) 1s 1 normal both`;
+      this._h1.style.webkitAnimation = `typewriter ${time}s steps(${steps}) 1s 1 normal both`;
+
+      console.log('time:', time, 'steps:', steps, 'rank:', this.rank, 'word:', this.messages[this.rank]);
 
       this.rank = (this.rank + 1) % this.messages.length;
 
-      console.log('time:', time, 'rank:', this.rank);
+
     }, 1000);
   };
 
