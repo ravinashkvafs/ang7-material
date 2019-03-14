@@ -38,6 +38,7 @@ export class BlogComponent implements OnInit {
   indx: number = 0;
   eachC: number = -1;
   increment: boolean = true;
+  buffer_time: number = 20;
 
   ngOnInit() {
     // Code for Chrome, Safari and Opera
@@ -47,12 +48,16 @@ export class BlogComponent implements OnInit {
     document.getElementById("myTypewriter").addEventListener("animationend", this.cbType);
 
     this.closeI = setInterval(() => {
+      if (this.indx < this.messages.length)
+        if (this.eachC == this.messages[this.indx].length && this.buffer_time != 0)
+          return --this.buffer_time;
+        else
+          this.buffer_time = 20;
 
-      // console.log(this.increment, this.eachC, this.indx);
       if (this.indx < this.messages.length) {
-        this.increment ? (this.eachC++ , this.eachC == this.messages[this.indx].length ? this.increment = false : null) : (this.eachC-- , this.eachC == 0 ? (this.increment = true, this.indx++) : null);
+        this.increment ? (this.eachC++ , this.eachC == this.messages[this.indx].length ? this.increment = false : null) : (this.eachC-- , this.eachC == -1 ? (this.increment = true, this.indx++) : null);
 
-        if (this.indx < this.messages.length)
+        if (this.indx < this.messages.length && this.eachC >= 0)
           this.dynamic_statement = this.messages[this.indx].slice(0, this.eachC);
       }
 

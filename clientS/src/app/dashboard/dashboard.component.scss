@@ -1,0 +1,35 @@
+.dashboard_bg{
+    background-color: black; padding: 20px; height: 657px;
+}
+
+.my_card{
+    cursor: pointer;
+}
+
+.my_card1{
+    background: #EB663B;  
+    &:hover{
+        background: #FF663B;
+    } 
+}
+
+.my_card2{
+    background: #9C4275;   
+    &:hover{
+        background: #AD2175;
+    } 
+}
+
+.my_card3{
+    background: #11B0C5;   
+    &:hover{
+        background: #66B0C5;
+    } 
+}
+
+.my_card4{
+    background: #FF9617;   
+    &:hover{
+        background: #FFA729;
+    } 
+}
