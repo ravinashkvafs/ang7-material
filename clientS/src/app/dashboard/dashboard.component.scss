@@ -1,35 +1,63 @@
 .dashboard_bg{
-    background-color: black; padding: 20px; height: 657px;
+    background-color: black; padding: 20px;
 }
 
 .my_card{
     cursor: pointer;
+    border-radius: 15px;
+    background-position: center center;
+    background-size: 30%;
+    background-repeat: no-repeat;
+    min-height: 50px;
+    &:hover{
+        border: 5px solid black;;
+    }
 }
 
 .my_card1{
-    background: #EB663B;  
+    background-color: #EB663B; 
+    background-image: url('../../assets/images/png/alarm-clock.png'); 
     &:hover{
-        background: #FF663B;
-    } 
+        background-color: #FF663B;
+    }     
 }
 
 .my_card2{
-    background: #9C4275;   
+    background-color: #9C4275;   
+    background-image: url('../../assets/images/png/edit.png'); 
     &:hover{
-        background: #AD2175;
+        background-color: #AD2175;
     } 
 }
 
 .my_card3{
-    background: #11B0C5;   
+    background-color: #11B0C5;   
+    background-image: url('../../assets/images/png/users.png'); 
     &:hover{
-        background: #66B0C5;
+        background-color: #66B0C5;
     } 
 }
 
 .my_card4{
-    background: #FF9617;   
+    background-color: #FF9617;   
+    background-image: url('../../assets/images/png/line-chart.png'); 
     &:hover{
-        background: #FFA729;
+        background-color: #FFA729;
     } 
+}
+
+.my_card5{
+    background-color: #4caf50;   
+    background-image: url('../../assets/images/png/safebox.png'); 
+    &:hover{
+        background-color: #66bb6a;
+    } 
+}
+
+.text_tag{
+    font-family: Cambria, Georgia, serif;
+    color: white; 
+    font-weight: bold; 
+    font-size: 20px;
+    padding: 10px;
 }

@@ -1,0 +1,47 @@
+<div fxLayout="column no-wrap" fxLayoutAlign="space-evenly center" style="padding: 20px;">
+
+  <div fxLayout fxLayoutAlign="center start">
+    <mat-form-field class="search_input mat-elevation-z5">
+      <mat-icon matPrefix>search</mat-icon>
+      <input type="text" matInput placeholder="Enter Name" style="color: red;" [(ngModel)]="userSearch">
+    </mat-form-field>
+  </div>
+
+  <div fxLayout="row wrap" fxLayoutAlign="space-evenly start" fxLayoutGap="10px">
+
+    <div fxLayout fxLayoutAlign="center start" fxFlex.gt-xs="19" fxFlex.lt-sm="100" fxGrow="2" fxShrink="0" fxLayout
+      *ngFor="let user of userList | search:userSearch" class="list">
+      <div fxLayout="column no-wrap" fxLayoutAlign="space-evenly center" fxLayoutGap="10px" fxGrow="2" fxShrink="0"
+        class="my_card mat-elevation-z5">
+        <div>
+          <span><img [src]="'../../assets/images/default_' + (user.gender=='male'?'boy':'girl') + '.png'"
+              style="max-width: 100px; margin-top: -50px;"></span>
+        </div>
+        <div>
+          <div style="padding: 10px 0px;">
+            <span class="card_name">{{user.name}}</span>
+          </div>
+          <div>
+            <span class="card_title">{{user.designation}}</span>
+            <span class="card_company">{{user.company}}</span>
+          </div>
+        </div>
+        <div fxFill>
+          <hr style="border-color: #eee;">
+        </div>
+        <div fxFill fxLayout fxLayoutGap="10px">
+          <div fxFlex="50">
+            <span class="card_count_title">Followers</span><br>
+            <span class="card_count">213 k</span>
+          </div>
+          <div fxFlex="50">
+            <span class="card_count_title">Following</span><br>
+            <span class="card_count">52</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
