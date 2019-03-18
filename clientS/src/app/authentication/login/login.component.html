@@ -7,7 +7,8 @@
       <mat-card-content>
 
         <form [formGroup]="form" fxLayout="column wrap" style="padding: 20px;" (submit)="doLogin()">
-          <mat-form-field *ngIf="view=='register'">
+          <mat-form-field appearance="outline" *ngIf="view=='register'">
+            <mat-label>Full Name</mat-label>
             <input matInput placeholder="Full Name" formControlName="fullname">
             <mat-icon matSuffix>face</mat-icon>
             <mat-error *ngIf="form.controls['fullname'].hasError('required')">{{getErrorMessage('Full
@@ -16,40 +17,55 @@
               Name','minLength',3)}}</mat-error>
           </mat-form-field>
 
-          <mat-form-field *ngIf="view=='register'">
+          <mat-form-field appearance="outline" *ngIf="view=='register'">
+            <mat-label>Mobile Number</mat-label>
             <input matInput placeholder="Mobile Number" formControlName="mobile" type="number">
             <mat-icon matSuffix>phone</mat-icon>
-            <mat-error *ngIf="form.controls['mobile'].hasError('required')">{{getErrorMessage('Mobile','required')}}</mat-error>
+            <mat-error *ngIf="form.controls['mobile'].hasError('required')">{{getErrorMessage('Mobile','required')}}
+            </mat-error>
             <mat-error *ngIf="form.controls['mobile'].hasError('pattern')">{{getErrorMessage('Mobile
               Number','pattern')}}</mat-error>
           </mat-form-field>
 
-          <mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Login-ID</mat-label>
             <input matInput placeholder="Login-ID" formControlName="loginid">
             <mat-icon matSuffix>person</mat-icon>
-            <mat-error *ngIf="form.controls['loginid'].hasError('required')">{{getErrorMessage('Login-ID','required')}}</mat-error>
-            <mat-error *ngIf="form.controls['loginid'].hasError('minlength')">{{getErrorMessage('Login-ID','minLength',6)}}</mat-error>
-            <mat-error *ngIf="form.controls['loginid'].hasError('pattern')">{{getErrorMessage('Login-ID','pattern')}}</mat-error>
+            <mat-error *ngIf="form.controls['loginid'].hasError('required')">{{getErrorMessage('Login-ID','required')}}
+            </mat-error>
+            <mat-error *ngIf="form.controls['loginid'].hasError('minlength')">
+              {{getErrorMessage('Login-ID','minLength',6)}}</mat-error>
+            <mat-error *ngIf="form.controls['loginid'].hasError('pattern')">{{getErrorMessage('Login-ID','pattern')}}
+            </mat-error>
           </mat-form-field>
 
-          <mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
             <input matInput placeholder="Password" formControlName="password" [type]="visible ? 'text' : 'password'">
             <mat-icon matSuffix (click)="visible = !visible">{{visible ? 'visibility' : 'visibility_off'}}</mat-icon>
-            <mat-error *ngIf="form.controls['password'].hasError('required')">{{getErrorMessage('Password','required')}}</mat-error>
-            <mat-error *ngIf="form.controls['password'].hasError('minlength')">{{getErrorMessage('Password','minLength',8)}}</mat-error>
+            <mat-error *ngIf="form.controls['password'].hasError('required')">{{getErrorMessage('Password','required')}}
+            </mat-error>
+            <mat-error *ngIf="form.controls['password'].hasError('minlength')">
+              {{getErrorMessage('Password','minLength',8)}}</mat-error>
           </mat-form-field>
 
-          <mat-form-field *ngIf="view=='register'">
-            <input matInput placeholder="Re-enter Password" formControlName="password_again" [type]="visible ? 'text' : 'password'">
+          <mat-form-field appearance="outline" *ngIf="view=='register'">
+            <mat-label>Re-enter Password</mat-label>
+            <input matInput placeholder="Re-enter Password" formControlName="password_again"
+              [type]="visible ? 'text' : 'password'">
             <mat-icon matSuffix (click)="visible = !visible">{{visible ? 'visibility' : 'visibility_off'}}</mat-icon>
-            <mat-error *ngIf="form.controls['password_again'].hasError('required')">{{getErrorMessage('Password','required')}}</mat-error>
-            <mat-error *ngIf="form.controls['password_again'].hasError('minlength')">{{getErrorMessage('Password','minLength',8)}}</mat-error>
-            <mat-error *ngIf="form.controls['password_again'].hasError('pswNoMatch')">{{getErrorMessage('Password','pswNoMatch')}}</mat-error>
+            <mat-error *ngIf="form.controls['password_again'].hasError('required')">
+              {{getErrorMessage('Password','required')}}</mat-error>
+            <mat-error *ngIf="form.controls['password_again'].hasError('minlength')">
+              {{getErrorMessage('Password','minLength',8)}}</mat-error>
+            <mat-error *ngIf="form.controls['password_again'].hasError('pswNoMatch')">
+              {{getErrorMessage('Password','pswNoMatch')}}</mat-error>
           </mat-form-field>
 
           <div fxLayout="column wrap" fxLayoutAlign="center center">
             <div>
-              <button type="submit" [ngClass]="form.valid ? 'custom_theme_btn' : ''" mat-raised-button [disabled]="!form.valid">{{view=='login'?'Login':'Register'}}</button>
+              <button type="submit" [ngClass]="form.valid ? 'custom_theme_btn' : ''" mat-raised-button
+                [disabled]="!form.valid">{{view=='login'?'Login':'Register'}}</button>
             </div>
             <div style="margin: 8px 0; font-size: 12px;">
               <a class="custom_link" (click)="switchViews()">{{view=='login' ? 'New User? Register Here!' : 'Back'}}</a>

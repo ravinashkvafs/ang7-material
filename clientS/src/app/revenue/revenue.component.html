@@ -1,0 +1,15 @@
+<div fxLayout="row wrap" fxLayoutAlign="space-evenly start" fxLayoutGap="10px" style="padding: 20px; height: 657px;">
+
+  <div fxLayout fxLayoutAlign="center center" fxFlex.gt-xs="32" fxFlex.lt-sm="100" fxGrow="2" fxShrink="0" fxLayout
+    class="analysis_card" *ngFor="let tab of [1,2,3]; let i=index;" [ngClass]="tab_colors[i%4]">
+
+    <div fxFlex="20">
+      {{tab}}
+    </div>
+    <div fxFlex>
+      rtge
+    </div>
+
+  </div>
+
+</div>

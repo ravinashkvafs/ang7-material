@@ -1,4 +1,4 @@
-<div fxLayout="column no-wrap" fxLayoutAlign="space-evenly center" style="padding: 20px;">
+<div fxLayout="column nowrap" fxLayoutAlign="space-evenly center" style="padding: 20px;">
 
   <div fxLayout fxLayoutAlign="center start">
     <mat-form-field class="search_input mat-elevation-z5">
@@ -11,7 +11,7 @@
 
     <div fxLayout fxLayoutAlign="center start" fxFlex.gt-xs="19" fxFlex.lt-sm="100" fxGrow="2" fxShrink="0" fxLayout
       *ngFor="let user of userList | search:userSearch" class="list">
-      <div fxLayout="column no-wrap" fxLayoutAlign="space-evenly center" fxLayoutGap="10px" fxGrow="2" fxShrink="0"
+      <div fxLayout="column nowrap" fxLayoutAlign="space-evenly center" fxLayoutGap="10px" fxGrow="2" fxShrink="0"
         class="my_card mat-elevation-z5">
         <div>
           <span><img [src]="'../../assets/images/default_' + (user.gender=='male'?'boy':'girl') + '.png'"

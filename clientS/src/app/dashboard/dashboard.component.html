@@ -33,8 +33,8 @@
     </div>
 
     <div fxFlex="1 0 auto" fxLayout fxLayoutAlign="center end" class="my_card my_card5" (mouseenter)="e5=true"
-      (mouseleave)="e5=false">
-      <span *ngIf="e5" class="text_tag">Money Management</span>
+      (mouseleave)="e5=false" [routerLink]="['/revenue']">
+      <span *ngIf="e5" class="text_tag">Revenue Management</span>
     </div>
 
   </div>
