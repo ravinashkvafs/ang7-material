@@ -1,0 +1,13 @@
+<div fxLayout="column no-wrap" fxLayoutAlign="start center" style="padding: 20px 10%;">
+  <div fxFill class="event_card" *ngFor="let event of events; let i=index;"
+    [ngStyle]="i%3==0 ? {'border-color':'orange'}:(i%3==1?{'border-color':'yellow'}:{'border-color':'lightgreen'})"
+    fxLayout fxLayoutAlign="start center">
+    <div fxGrow="2" fxShrink="0" fxFlex="20">
+      {{event.date}}
+    </div>
+    <div fxGrow="2" fxShrink="0" fxFlex fxLayout="column no-wrap" fxLayoutAlign="center start">
+      <div>{{event.statement}}</div>
+      <div>{{event.name}}</div>
+    </div>
+  </div>
+</div>
