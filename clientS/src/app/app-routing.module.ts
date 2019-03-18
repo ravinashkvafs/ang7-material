@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
   { path: 'users', loadChildren: './users/users.module#UsersModule' },
   { path: 'revenue', loadChildren: './revenue/revenue.module#RevenueModule' },
+  { path: 'events', loadChildren: './events/events.module#EventsModule' },
   { path: '**', redirectTo: '' }
 ];
 

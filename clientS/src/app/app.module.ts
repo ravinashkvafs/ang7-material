@@ -7,8 +7,6 @@ import { AppMaterialModule } from './app-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
-import { UsersModule } from './users/users.module';
-import { RevenueModule } from './revenue/revenue.module';
 
 @NgModule({
   declarations: [
@@ -20,9 +18,7 @@ import { RevenueModule } from './revenue/revenue.module';
     AppRoutingModule,
     AppMaterialModule,
     BrowserAnimationsModule,
-    HttpClientModule,
-    UsersModule,
-    RevenueModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
