@@ -13,9 +13,9 @@ export class RevenueComponent implements OnInit {
   }
 
   tabs: Array<object> = [
-    { icon: 'pie_chart', title: 'Total Remaining' },
-    { icon: 'monetization_on', title: 'Total Spent' },
-    { icon: 'cloud', title: 'Total Expenditure' }
+    { icon: 'pie_chart', title: 'Total Remaining', count: 312 },
+    { icon: 'monetization_on', title: 'Total Spent', count: 3426 },
+    { icon: 'cloud', title: 'Total Expenditure', count: 9867 }
   ];
   tab_colors: Array<string> = ['tab1', 'tab2', 'tab1'];
 }

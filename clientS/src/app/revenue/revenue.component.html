@@ -1,16 +1,15 @@
 <div fxLayout.gt-xs="row wrap" fxLayout.lt-sm="column nowrap" fxLayoutAlign="space-evenly start" fxLayoutGap="30px"
-  style="padding: 20px; height: 657px;">
+  style="padding: 20px;">
 
-  <div fxFlex.gt-xs="30" fxFlex.lt-sm="100" fxGrow="1" fxShrink="0" fxLayout fxLayoutAlign="center center"
+  <div fxFlex.gt-xs="30" fxFlex.lt-sm="100" fxFill fxGrow="1" fxShrink="0" fxLayout fxLayoutAlign="center center"
     class="analysis_card" *ngFor="let tab of tabs; let i=index;" [ngClass]="tab_colors[i%4]">
 
-    <div fxFlex.gt-xs="20" fxFlex.lt-sm="100" fxGrow="1" fxShrink="0" fxLayout fxLayoutAlign="center center"
-      style="border: 1px solid black">
+    <div fxFill fxGrow="1" fxShrink="0" fxFlex="20" fxLayout fxLayoutAlign="center center">
       <i class="material-icons" style="font-size: 48px;">{{tab.icon}}</i>
     </div>
-    <div fxFlex fxGrow="1" fxShrink="0" fxLayout="column nowrap" fxLayoutAlign="center center"
-      style="border: 1px solid black">
-      {{tab.title}}
+    <div fxFill fxGrow="1" fxShrink="0" fxFlex="80" fxLayout="column nowrap" fxLayoutAlign="center end">
+      <span class="tab_title">{{tab.title}}</span>
+      <span class="tab_count">{{tab.count}}</span>
     </div>
 
   </div>
