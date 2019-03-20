@@ -36,17 +36,29 @@ export class RevenueComponent implements OnInit {
   tab_colors: Array<string> = ['tab1', 'tab2', 'tab1'];
 
   userList: any = [
-    { pic: '', name: 'Avinash Sharma', remaining: 0, spent: 412, gender: 'male' },
-    { pic: '', name: 'Amit Dhiman', remaining: 0, spent: 412, gender: 'male' },
+    { pic: '', name: 'Avinash Sharma', remaining: 53, spent: 412, gender: 'male' },
+    { pic: '', name: 'Amit Dhiman', remaining: 12, spent: 412, gender: 'male' },
     { pic: '', name: 'Rohit Sharma', remaining: 0, spent: 412, gender: 'male' },
-    { pic: '', name: 'Ayush Pratap', remaining: 0, spent: 412, gender: 'male' },
-    { pic: '', name: 'Lavanya Reddy', remaining: 0, spent: 412, gender: 'female' },
-    { pic: '', name: 'Aftab Khan', remaining: 0, spent: 412, gender: 'male' },
-    { pic: '', name: 'Mayank Jain', remaining: 0, spent: 412, gender: 'male' }
+    { pic: '', name: 'Ayush Pratap', remaining: 64, spent: 412, gender: 'male' },
+    { pic: '', name: 'Lavanya Reddy', remaining: 12, spent: 412, gender: 'female' },
+    { pic: '', name: 'Aftab Khan', remaining: 84, spent: 412, gender: 'male' },
+    { pic: '', name: 'Mayank Jain', remaining: 124, spent: 412, gender: 'male' }
   ];
 
   dynamicCalculateCount(num) {
     console.log(num)
     return num;
+  }
+
+  sort_on: string = 'name';
+  reverse: boolean = false;
+
+  sortMe(field) {
+    this.reverse = this.sort_on == field ? !this.reverse : false;
+    this.sort_on = field;
+  }
+
+  isActiveSort(field) {
+    return this.sort_on == field;
   }
 }

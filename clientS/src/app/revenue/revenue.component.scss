@@ -4,7 +4,7 @@
     // min-height: 100px;
     // border: 1px solid #eee;
     border-radius: 10px;
-    // margin: 10px auto;
+    margin: 10px auto;
     cursor: pointer;
 }
 
@@ -125,10 +125,20 @@ input{
 }
 
 .sorting_icon{
-    font-size: 48px;
+    font-size: 38px;
+    cursor: pointer;    
+}
+
+.sorting_icon_unselected{
     color: black;
-    cursor: pointer;
     &:hover{
         color: #555;
+    }
+}
+
+.sorting_icon_selected{
+    color: orange;
+    &:hover{
+        color: red;
     }
 }

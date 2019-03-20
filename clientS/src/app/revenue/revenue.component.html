@@ -16,23 +16,31 @@
 
 </div>
 
-<div fxLayout="column nowrap" fxLayoutAlign="space-evenly center" style="padding: 20px;">
+<div fxLayout="column nowrap" fxLayoutAlign="space-evenly center" style="padding: 20px 20px 30px 20px;">
 
-  <div fxFill fxLayout fxLayoutAlign="space-evenly center" fxLayoutGap="20px" style="border: 1px solid black;">
-    <mat-icon matTooltip="Sort by 'NAME'" fxFlexAlig="center center" class="sorting_icon">person_pin</mat-icon>
+  <div fxFill fxLayout.lt-sm="column nowrap" fxLayout.gt-xs="row wrap" fxLayoutAlign="space-evenly center"
+    fxLayoutGap="20px">
+    <mat-icon matTooltip="Sort by 'NAME'" fxFlexAlig="center center" class="sorting_icon"
+      [ngClass]="isActiveSort('name') ? 'sorting_icon_selected' : 'sorting_icon_unselected'" (click)="sortMe('name')">
+      person
+    </mat-icon>
 
     <mat-form-field class="search_input mat-elevation-z5">
       <mat-icon matPrefix>search</mat-icon>
       <input type="text" matInput placeholder="Enter Name" style="color: red;" [(ngModel)]="userSearch">
     </mat-form-field>
 
-    <mat-icon matTooltip="Sort by 'NAME'" fxFlexAlig="center center" class="sorting_icon">person_pin</mat-icon>
+    <mat-icon matTooltip="Sort by 'REMAINING'" fxFlexAlig="center center" class="sorting_icon"
+      [ngClass]="isActiveSort('remaining') ? 'sorting_icon_selected' : 'sorting_icon_unselected'"
+      (click)="sortMe('remaining')">
+      pie_chart
+    </mat-icon>
   </div>
 
   <div fxLayout="row wrap" fxLayoutAlign="space-evenly start" fxLayoutGap="10px">
 
     <div fxLayout fxLayoutAlign="center start" fxFlex.gt-xs="19" fxFlex.lt-sm="100" fxGrow="2" fxShrink="0" fxLayout
-      *ngFor="let user of userList | search:userSearch" class="list">
+      *ngFor="let user of userList | search:userSearch | sort:sort_on:reverse" class="list">
       <div fxLayout="column nowrap" fxLayoutAlign="space-evenly center" fxLayoutGap="10px" fxGrow="2" fxShrink="0"
         class="my_card mat-elevation-z5">
         <div>
