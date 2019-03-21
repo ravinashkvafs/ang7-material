@@ -6,19 +6,19 @@ import { UsersComponent } from './users.component';
 import { UsersMaterialModule } from './users-material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
-import { SearchPipe } from '../shared/pipes/search.pipe';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
-    UsersComponent,
-    SearchPipe
+    UsersComponent
   ],
   imports: [
     CommonModule,
     UsersRoutingModule,
     UsersMaterialModule,
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ]
 })
 export class UsersModule { }

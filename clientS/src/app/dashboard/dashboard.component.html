@@ -7,7 +7,7 @@
       <div fxFlex="50" fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="10px">
 
         <div fxFlex="1 0 auto" fxFlex.gt-sm="60" fxFlex.lt-md="50" fxLayout fxLayoutAlign="center end"
-          class="my_card my_card1" (mouseenter)="e1=true" (mouseleave)="e1=false">
+          class="my_card my_card1" (mouseenter)="e1=true" (mouseleave)="e1=false" [routerLink]="['/events/list']">
           <span *ngIf="e1" class="text_tag">Events & Anniversaries</span>
         </div>
         <div fxFlex="1 0 auto" fxLayout fxLayoutAlign="center end" class="my_card my_card2" (mouseenter)="e2=true"

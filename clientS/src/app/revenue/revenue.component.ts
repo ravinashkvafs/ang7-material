@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-revenue',
@@ -7,24 +8,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RevenueComponent implements OnInit {
 
-  constructor() { }
+  constructor(private spinner: NgxSpinnerService) { }
 
   ngOnInit() {
 
-    this.tabs.forEach(item => {
-      let steps: any = parseInt((item['count'] / 50).toFixed(0));
+    this.spinner.show();
 
-      let closeI = setInterval(() => {
+    setTimeout(() => {
 
-        if (item['dynamic'] < item['count'])
-          item['dynamic'] += steps;
-        else {
-          item['dynamic'] = item['count'];
-          clearInterval(closeI);
-        }
+      this.spinner.hide();
 
-      }, 50);
-    });
+      this.tabs.forEach(item => {
+        let steps: any = parseInt((item['count'] / 50).toFixed(0));
+
+        let closeI = setInterval(() => {
+
+          if (item['dynamic'] < item['count'])
+            item['dynamic'] += steps;
+          else {
+            item['dynamic'] = item['count'];
+            clearInterval(closeI);
+          }
+
+        }, 50);
+      });
+
+    }, 2000);
 
   }
 

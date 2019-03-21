@@ -1,9 +1,41 @@
 .event_card{
-    background-color: #efefef;
-    padding: 10px;
-    // margin: 10px;
-    border: 1px solid black;
-    border-left-width: 8px;
-    border-left-style: solid;
-    border-left-color: black;
+    background-color: #fff;
+    border: 1px solid #eee;
+    max-width: 600px;
+    cursor: pointer;
+    transition: background-color 1s;
+    &:hover{
+        background-color: #eef;
+    }
+}
+
+.date_card{
+    min-height: 70px;
+    background-color: #00A0D2;
+    color: white;
+    transition: background-color 1s ease-in-out;
+    &:hover{
+        background-color: #88ACC2;
+    }
+}
+
+.date_card .title{
+    font-size: 25px;
+}
+
+.date_card .description{
+    font-size: 15px;
+}
+
+.content_card{
+    padding: 5px 15px;
+}
+
+.content_card .title{
+    color:#00A0D2;
+    font-size: 20px;
+}
+
+.content_card .description{
+    font-size: 15px;
 }

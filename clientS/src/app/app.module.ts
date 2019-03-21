@@ -13,12 +13,12 @@ import { SharedModule } from './shared/shared.module';
     AppComponent
   ],
   imports: [
-    SharedModule,
     BrowserModule,
     AppRoutingModule,
     AppMaterialModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

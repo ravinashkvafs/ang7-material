@@ -6,17 +6,24 @@ import { RevenueMaterialModule } from './revenue-material.module';
 import { RevenueComponent } from './revenue.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
-import { SearchPipe } from '../shared/pipes/search.pipe';
 import { SortPipe } from '../shared/pipes/sort.pipe';
+import { SharedModule } from '../shared/shared.module';
+import { NgxSpinnerModule } from 'ngx-spinner';
+
 
 @NgModule({
-  declarations: [RevenueComponent, SearchPipe, SortPipe],
+  declarations: [
+    RevenueComponent,
+    SortPipe
+  ],
   imports: [
     CommonModule,
     RevenueRoutingModule,
     RevenueMaterialModule,
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
+    NgxSpinnerModule,
+    SharedModule
   ]
 })
 export class RevenueModule { }
