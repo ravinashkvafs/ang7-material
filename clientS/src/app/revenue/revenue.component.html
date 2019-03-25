@@ -1,6 +1,5 @@
-<!-- <ngx-spinner></ngx-spinner> -->
-<ngx-spinner bdColor="rgba(51,51,51,0.9)" size="large" color="#fff" type="ball-scale-multiple" fullscreen="true">
-  <p style="font-size: 20px; color: white">Loading...</p>
+<ngx-spinner bdColor="rgba(51,51,51,0.5)" size="large" color="#fff" type="ball-scale-multiple" fullscreen="true">
+  <!-- <p style="font-size: 20px; color: white">Loading...</p> -->
 </ngx-spinner>
 
 <div fxLayout.gt-xs="row wrap" fxLayout.lt-sm="row wrap" fxLayoutAlign="space-evenly start" fxLayoutGap="30px"
@@ -21,10 +20,10 @@
 
 </div>
 
-<div fxLayout="column nowrap" fxLayoutAlign="space-evenly center" style="padding: 20px 20px 30px 20px;">
+<div fxLayout="column nowrap" fxLayoutAlign="space-evenly center" style="padding: 20px 20px 30px 20px">
 
   <div fxFill fxLayout.lt-sm="column nowrap" fxLayout.gt-xs="row wrap" fxLayoutAlign="space-evenly center"
-    fxLayoutGap="20px">
+    fxLayoutGap="30px">
     <mat-icon matTooltip="Sort by 'NAME'" fxFlexAlig="center center" class="sorting_icon"
       [ngClass]="isActiveSort('name') ? 'sorting_icon_selected' : 'sorting_icon_unselected'" (click)="sortMe('name')">
       person
@@ -42,15 +41,16 @@
     </mat-icon>
   </div>
 
-  <div fxLayout="row wrap" fxLayoutAlign="space-evenly start" fxLayoutGap="10px">
+  <div fxFill fxLayout="row wrap" fxLayoutAlign="space-evenly start" fxLayoutGap="10px">
 
     <div fxLayout fxLayoutAlign="center start" fxFlex.gt-xs="19" fxFlex.lt-sm="100" fxGrow="2" fxShrink="0" fxLayout
       *ngFor="let user of userList | search:userSearch | sort:sort_on:reverse" class="list">
       <div fxLayout="column nowrap" fxLayoutAlign="space-evenly center" fxLayoutGap="10px" fxGrow="2" fxShrink="0"
         class="my_card mat-elevation-z5">
         <div>
-          <span><img [src]="'../../assets/images/default_' + (user.gender=='male'?'boy':'girl') + '.png'"
-              style="max-width: 100px; margin-top: -50px;"></span>
+          <span><img
+              [src]="'../../assets/images/'+ (user.hover ? 'batman.jpg' : ('default_' + (user.gender=='male'?'boy':'girl') + '.png'))"
+              class="img_top" (mouseenter)="user.hover=true" (mouseleave)="user.hover=false"></span>
         </div>
         <div>
           <div style="padding: 10px 0px;">

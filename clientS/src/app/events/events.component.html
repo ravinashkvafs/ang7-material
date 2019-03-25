@@ -1,6 +1,12 @@
-<div fxLayout="column nowrap" fxLayoutAlign="start center" fxLayoutGap="20px" style="margin-top: 20px;">
-  <div fxFill fxFlex="1 1 auto" fxLayout fxLayoutAlign="center center" class="event_card" *ngFor="let event of events">
+<div fxLayout="column nowrap" fxLayoutAlign="start center" fxLayoutGap="20px" style="margin: 20px auto;">
+  <div fxFill fxFlex="1 1 auto" fxLayout fxLayoutAlign="center center" class="event_card mat-elevation-z6"
+    *ngFor="let event of events">
+
     <div fxFlex="20%" fxLayout="column" fxLayoutAlign="center center" class="date_card">
+      <span>
+        <h4 style="position: absolute; left:0; transform:rotate(270deg); transform-origin:15px;">
+          {{giveMeDateMonth(event.date)['y']}}</h4>
+      </span>
       <span class="title">{{giveMeDateMonth(event.date)['d']}}</span>
       <span class="description">{{giveMeDateMonth(event.date)['m']}}</span>
     </div>
