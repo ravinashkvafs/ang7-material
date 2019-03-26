@@ -148,3 +148,13 @@ input{
         color: red;
     }
 }
+
+.custom_theme_btn{
+    background: #4f92ff;
+    color: white;
+    width: 100%;
+    &:hover,
+    &:focus{
+        background-color: #4f92cc;
+    }
+}

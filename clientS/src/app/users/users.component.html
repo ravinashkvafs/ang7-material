@@ -1,13 +1,13 @@
 <div fxLayout="column nowrap" fxLayoutAlign="space-evenly center" style="padding: 20px;">
 
-  <div fxLayout fxLayoutAlign="center start">
+  <div fxFill fxLayout fxLayoutAlign="center start">
     <mat-form-field class="search_input mat-elevation-z5">
       <mat-icon matPrefix>search</mat-icon>
       <input type="text" matInput placeholder="Enter Name" style="color: red;" [(ngModel)]="userSearch">
     </mat-form-field>
   </div>
 
-  <div fxLayout="row wrap" fxLayoutAlign="space-evenly start" fxLayoutGap="10px">
+  <div fxFill fxLayout="row wrap" fxLayoutAlign="space-evenly start" fxLayoutGap="10px">
 
     <div fxLayout fxLayoutAlign="center start" fxFlex.gt-xs="19" fxFlex.lt-sm="100" fxGrow="2" fxShrink="0" fxLayout
       *ngFor="let user of userList | search:userSearch" class="list">

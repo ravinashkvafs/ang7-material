@@ -1,0 +1,20 @@
+.custom_theme_btn{
+    background: #4f92ff;
+    color: white;
+    width: 100%;
+    &:hover,
+    &:focus{
+        background-color: #4f92cc;
+    }
+}
+
+.title{
+    text-align: center;
+    font-weight: 500;
+}
+
+.input_class{
+    color: red;
+    text-align: center;
+    font-size: 30px;
+}

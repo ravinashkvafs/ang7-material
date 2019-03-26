@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { MatDialogConfig, MatDialog } from '@angular/material';
+import { RevenueDialogComponent } from '../shared/revenue-dialog/revenue-dialog.component';
 
 @Component({
   selector: 'app-revenue',
@@ -8,7 +10,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class RevenueComponent implements OnInit {
 
-  constructor(private spinner: NgxSpinnerService) { }
+  constructor(private spinner: NgxSpinnerService, private dialog: MatDialog) { }
 
   ngOnInit() {
 
@@ -33,7 +35,7 @@ export class RevenueComponent implements OnInit {
         }, 50);
       });
 
-    }, 2000);
+    }, 1000);
 
   }
 
@@ -55,7 +57,7 @@ export class RevenueComponent implements OnInit {
   ];
 
   dynamicCalculateCount(num) {
-    console.log(num)
+    // console.log(num)
     return num;
   }
 
@@ -69,5 +71,23 @@ export class RevenueComponent implements OnInit {
 
   isActiveSort(field) {
     return this.sort_on == field;
+  }
+
+  //Dialog
+  addExpenses(user) {
+    const dialogConfig = new MatDialogConfig();
+
+    // dialogConfig.disableClose = true;
+    // dialogConfig.autoFocus = true;
+    dialogConfig.minWidth = '25vw';
+    dialogConfig.data = user;
+
+    const dialogRef = this.dialog.open(RevenueDialogComponent, dialogConfig);
+
+    dialogRef.afterClosed()
+      .subscribe(result => {
+        console.log(`Dialog result: ${result}`);
+      });
+
   }
 }

@@ -4,20 +4,27 @@ import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { SharedMaterialModule } from './shared-material.module';
 import { SearchPipe } from './pipes/search.pipe';
+import { RevenueDialogComponent } from './revenue-dialog/revenue-dialog.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     BottomSheetComponent,
     DialogComponent,
-    SearchPipe
+    SearchPipe,
+    RevenueDialogComponent
   ],
   entryComponents: [
     BottomSheetComponent,
-    DialogComponent
+    DialogComponent,
+    RevenueDialogComponent
   ],
   imports: [
     CommonModule,
-    SharedMaterialModule
+    FormsModule,
+    SharedMaterialModule,
+    FlexLayoutModule
   ],
   exports: [
     SearchPipe
