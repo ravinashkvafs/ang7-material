@@ -1,41 +1,30 @@
 import { Component, OnInit, Inject, OnChanges, Input, DoCheck } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogConfig, MatDialogRef } from '@angular/material';
+import { RevenueComponent } from 'src/app/revenue/revenue.component';
 
 @Component({
   selector: 'app-revenue-dialog',
   templateUrl: './revenue-dialog.component.html',
   styleUrls: ['./revenue-dialog.component.scss']
 })
-export class RevenueDialogComponent implements OnInit, DoCheck {
-
-  @Input() amount: Array<string> = new Array(4).fill('0');
+export class RevenueDialogComponent implements OnInit {
+  amount: Array<number> = new Array(4).fill(0);
   method: string = 'add';
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private dialogRef: MatDialogRef<RevenueComponent>) { }
 
   ngOnInit() { }
 
-  ngDoCheck() {
-    this.amount.forEach((item: any, indx: number) => {
-      if (!Number.isInteger(parseInt(item))) {
-        this.amount[indx] = '0';
-        console.log('in', item, this.amount[indx])
-      }
-    })
 
-    // if(this.user.firstName === 'Michael') {
-    //   console.log('single property checked');
-    // }
+  changeBox() {
+    for (let i = 0; i < 4; i++)
+      if (!this.amount[i] || !(this.amount[i] >= 0 && this.amount[i] <= 9))
+        this.amount[i] = 0;
+  }
 
-    // let changes = this.differ.diff(this.user);
-
-    // if (changes) {
-    // 	changes.forEachChangedItem(item => console.log('ngDoCheck, changed items ', item.currentValue));
-    // 	changes.forEachAddedItem(item => console.log('ngDoCheck, added items ' + item.currentValue));
-    // 	changes.forEachRemovedItem(item => console.log('ngDoCheck, removed items ' + item.currentValue));
-    // } else {
-    // 	console.log('no changes');
-    // }
+  giveResult() {
+    let result = parseInt(this.amount.join(''));
+    this.dialogRef.close(this.method == 'add' ? result : -1 * result);
   }
 
   // ngOnChanges(changes: SimpleChanges) {

@@ -1,16 +1,28 @@
-<div fxLayout="column nowrap" fxLayoutALign="space-between center" style="min-height: 250px;">
+<div fxLayout="column nowrap" fxLayoutALign="space-between center" style="min-height: 160px;">
   <div fxFill fxFlex="1 1 auto" class="title">
-    {{data.name.split(' ')[0] + '\'s Expenses'}} - {{amount}}
+    {{data.name.split(' ')[0] + '\'s Expenses'}}
   </div>
   <div fxFill fxFlex="1 1 auto" fxLayout="row wrap" fxLayoutAlign="center center">
     <span fxFlex="20" class="input_class" (click)="method = method==='add'?'remove':'add'" style="cursor: pointer;">
       <i class="material-icons"> {{method}} </i>
     </span>
-    <input fxFlex="20" type="string" matInput placeholder="0" class="input_class" *ngFor="let i of amount"
-      [(ngModel)]="i">
+
+    <input fxFlex="20" type="number" matInput placeholder="0" min="0" max="9" class="input_class"
+      [(ngModel)]="amount[0]" (change)="changeBox()">
+    <input fxFlex="20" type="number" matInput placeholder="0" min="0" max="9" class="input_class"
+      [(ngModel)]="amount[1]" (change)="changeBox()">
+    <input fxFlex="20" type="number" matInput placeholder="0" min="0" max="9" class="input_class"
+      [(ngModel)]="amount[2]" (change)="changeBox()">
+    <input fxFlex="20" type="number" matInput placeholder="0" min="0" max="9" class="input_class"
+      [(ngModel)]="amount[3]" (change)="changeBox()">
+
+    <!-- <input fxFlex="20" type="number" matInput placeholder="0" min="0" max="9" class="input_class"
+      *ngFor="let item of amount$ | async; trackBy: trackItem" [(ngModel)]="item" (change)="changeBox()"> -->
   </div>
   <div fxFill fxFlex="1 1 auto">
-    <button mat-flat-button class="custom_theme_btn" [mat-dialog-close]="'okay'" tabindex="-1"
+    <button mat-flat-button class="custom_theme_btn" (click)="giveResult()" tabindex="-1"
       style="width: 100%">OKAY</button>
+    <!-- <button mat-flat-button class="custom_theme_btn" [mat-dialog-close]="'okay'" tabindex="-1"
+      style="width: 100%">OKAY</button> -->
   </div>
 </div>
