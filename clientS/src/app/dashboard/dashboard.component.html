@@ -11,7 +11,7 @@
           <span *ngIf="e1" class="text_tag">Events & Anniversaries</span>
         </div>
         <div fxFlex="1 0 auto" fxLayout fxLayoutAlign="center end" class="my_card my_card2" (mouseenter)="e2=true"
-          (mouseleave)="e2=false">
+          (mouseleave)="e2=false" [routerLink]="['/schedules']">
           <span *ngIf="e2" class="text_tag">Schedules</span>
         </div>
 

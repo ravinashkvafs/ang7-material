@@ -1,0 +1,32 @@
+<div class="calender">
+  <!-- HEADER -->
+  <div class="calender_header" fxLayout="row wrap" fxLayoutAlign="space-between center">
+    <div>
+      <span class="month">
+        <span class="sub_month">{{(today | date:'MMMM').substr(0,3)}}</span>{{(today | date:'MMMM').substr(3)}}</span>
+
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <div fxLayout="row nowrap" fxLayoutAlign="space-between center">
+        <div class="arrow" (click)="prevMonth()" (mouseleave)="removeInterval()">
+          <i class="material-icons"> keyboard_arrow_left </i>
+        </div>
+        <div class="arrow" (click)="nextMonth()" (mouseleave)="removeInterval()">
+          <i class="material-icons"> keyboard_arrow_right </i>
+        </div>
+      </div>
+      <div>
+        <span class="year">{{today | date:'yyyy'}}</span>
+      </div>
+    </div>
+  </div>
+  <!-- BODY -->
+  <div class="calender_body" fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <div fxFill fxLayout="row wrap" fxLayoutAlign="space-between center">
+      <div fxFlex="13" fxLayout="column" fxLayoutAlign="center center" *ngFor=" let day of days; index as i"
+        class="day_card">
+        <span class="day" [class.sub_day]="i%3==0">{{day}}</span>
+      </div>
+    </div>
+  </div>
+</div>

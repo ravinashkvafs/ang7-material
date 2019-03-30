@@ -1,0 +1,68 @@
+$theme_color: magenta;
+$border_color: #ccc;
+
+.calender{
+    // border: 1px solid $border_color;
+    margin: 20px;
+}
+
+.calender_header{
+    // border: 1px solid $border_color;
+    margin: 10px;
+    padding: 10px;
+    // border-radius: 5px;
+}
+
+.calender_body{
+    // border: 1px solid $border_color;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.day_card{
+    border: 1px solid $border_color;
+    min-height: 5.5rem;
+    // background-color: #d4fc79;
+    background-color: white;
+    border-radius: 5px;
+    margin: 5px auto;
+    cursor: pointer;
+    transition: background-color .5s;
+    &:hover{
+        // background-color: #84fab0;
+        background-color: #f7f7f7;
+    }
+}
+
+.day{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 2rem;
+}
+.sub_day{
+    color: $theme_color;
+    font-weight: bold;
+}
+.month{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 3rem;
+}
+.sub_month{
+    color: $theme_color;
+}
+.year{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 1.5rem;
+}
+
+.arrow{
+    margin: 5px;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 100%;
+    background-color: $border_color;
+    text-align: center;
+    transition: background-color .5s;
+    &:hover{
+        background-color: rgb(158, 146, 146);
+    }
+}
