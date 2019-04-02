@@ -7,18 +7,21 @@ import { SearchPipe } from './pipes/search.pipe';
 import { RevenueDialogComponent } from './revenue-dialog/revenue-dialog.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
+import { SchedulerDialogComponent } from './scheduler-dialog/scheduler-dialog.component';
 
 @NgModule({
   declarations: [
     BottomSheetComponent,
     DialogComponent,
     SearchPipe,
-    RevenueDialogComponent
+    RevenueDialogComponent,
+    SchedulerDialogComponent
   ],
   entryComponents: [
     BottomSheetComponent,
     DialogComponent,
-    RevenueDialogComponent
+    RevenueDialogComponent,
+    SchedulerDialogComponent
   ],
   imports: [
     CommonModule,

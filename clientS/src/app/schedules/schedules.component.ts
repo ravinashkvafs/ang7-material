@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogConfig, MatDialog } from '@angular/material';
+import { SchedulerDialogComponent } from '../shared/scheduler-dialog/scheduler-dialog.component';
 
 @Component({
   selector: 'app-schedules',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SchedulesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() { }
 
@@ -25,6 +27,7 @@ export class SchedulesComponent implements OnInit {
 
   prevMonth() {
     this.changeMonth(-1);
+    clearInterval(this.intrvl);
 
     this.intrvl = setInterval(() => {
       this.changeMonth(-1);
@@ -33,6 +36,7 @@ export class SchedulesComponent implements OnInit {
 
   nextMonth() {
     this.changeMonth(1);
+    clearInterval(this.intrvl);
 
     this.intrvl = setInterval(() => {
       this.changeMonth(1);
@@ -41,5 +45,28 @@ export class SchedulesComponent implements OnInit {
 
   removeInterval() {
     clearInterval(this.intrvl);
+  }
+
+  //Dialog
+  addSchedule(date) {
+    const dialogConfig = new MatDialogConfig();
+
+    // dialogConfig.disableClose = true;
+    // dialogConfig.autoFocus = true;
+    dialogConfig.minWidth = '25vw';
+    // dialogConfig.minHeight = '80%';
+    dialogConfig.data = {
+      date,
+      month: this.today.getMonth(),
+      year: this.today.getFullYear()
+    };
+
+    const dialogRef = this.dialog.open(SchedulerDialogComponent, dialogConfig);
+
+    dialogRef.afterClosed()
+      .subscribe(result => {
+        console.log(`Dialog result: ${result}`);
+      });
+
   }
 }

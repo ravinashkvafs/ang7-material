@@ -1,0 +1,38 @@
+.date{
+    font-size: 4.2rem;
+    font-weight: bold;
+    padding: 0 10px;
+    color: #555;
+}
+
+.month {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0 10px;
+    color: #ff4444;
+}
+
+.year {
+    font-size: 1.8rem;
+    padding: 0 10px;
+    color: #555;
+}
+
+.event{
+    padding: 15px;
+    margin: 10px 20px;
+    cursor: pointer;
+    background-color: blueviolet;
+    border-radius: 100%;
+    transition: background-color 1s, border-radius 1s, padding  1s;
+    &:hover{
+        padding: 25px;
+        background-color: blue;
+        border-radius: 40%;
+    }
+}
+
+.event-circle{
+    font-size: 3rem;
+    color: white;
+}

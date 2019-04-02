@@ -24,7 +24,7 @@
   <div class="calender_body" fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10px">
     <div fxFill fxLayout="row wrap" fxLayoutAlign="space-between center">
       <div fxFlex="13" fxLayout="column" fxLayoutAlign="center center" *ngFor=" let day of days; index as i"
-        class="day_card">
+        class="day_card" (click)="addSchedule(day)">
         <span class="day" [class.sub_day]="i%3==0">{{day}}</span>
       </div>
     </div>

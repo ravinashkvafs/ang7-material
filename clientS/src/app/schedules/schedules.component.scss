@@ -1,9 +1,16 @@
-$theme_color: magenta;
+$theme_color: blueviolet;
 $border_color: #ccc;
 
 .calender{
     // border: 1px solid $border_color;
     margin: 20px;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
 
 .calender_header{
