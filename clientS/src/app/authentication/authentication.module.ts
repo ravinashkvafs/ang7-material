@@ -2,14 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AuthenticationRoutingModule } from './authentication-routing.module';
-import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthMaterialModule } from './authentication-material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AuthenticationComponent } from './authentication.component';
 
 @NgModule({
   declarations: [
-    LoginComponent
+    AuthenticationComponent
   ],
   imports: [
     CommonModule,
@@ -18,6 +18,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule
-  ]
+  ],
+  providers: []
 })
 export class AuthenticationModule { }

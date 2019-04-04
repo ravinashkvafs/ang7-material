@@ -18,6 +18,8 @@
 </div>
 
 <div fxLayout fxLayoutAlign="center center" *ngIf="type">
-  <input id="input-file-id" multiple type="file" style="visibility: hidden;" />
-  <label for="input-file-id" mat-raised-button color="primary" style="position: absolute">Choose Files</label>
+  <label for="input-file-id" class="input-file-btn">
+    <i class="material-icons" style="margin: 0px auto -30px auto;"> attachment </i> Choose Files
+  </label>
+  <input id="input-file-id" multiple type="file" style="visibility: hidden; position: absolute;" />
 </div>

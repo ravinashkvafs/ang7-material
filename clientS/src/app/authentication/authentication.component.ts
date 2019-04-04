@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
-import { AuthenticationService } from '../authentication.service';
+import { AuthenticationService } from './authentication.service';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { DialogComponent } from 'src/app/shared/dialog/dialog.component';
 import { Router } from '@angular/router';
@@ -11,11 +11,11 @@ import { Router } from '@angular/router';
 // }
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-authentication',
+  templateUrl: 'authentication.component.html',
+  styleUrls: ['authentication.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class AuthenticationComponent implements OnInit {
   form: any;
   view: string = 'login';
   registration_fields = [

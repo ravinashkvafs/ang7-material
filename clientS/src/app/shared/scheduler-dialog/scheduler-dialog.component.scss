@@ -24,7 +24,7 @@
     cursor: pointer;
     background-color: blueviolet;
     border-radius: 100%;
-    transition: background-color 1s, border-radius 1s, padding  1s;
+    transition: background-color .5s, border-radius .5s, padding .5s;
     &:hover{
         padding: 25px;
         background-color: blue;
@@ -35,4 +35,18 @@
 .event-circle{
     font-size: 3rem;
     color: white;
+}
+
+.input-file-btn{
+    background-color: blueviolet;
+    border-width: 0;
+    padding: 10px 15px;
+    margin: 20px auto;
+    color: white;
+    cursor: pointer;
+    transition: background-color .5s, border-radius .5s;
+    &:hover{
+        background-color: blue;
+        border-radius: 15px;
+    }
 }
