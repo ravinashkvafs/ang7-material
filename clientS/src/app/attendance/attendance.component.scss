@@ -1,0 +1,97 @@
+$theme_dark: #fb8c00;
+$theme_color: #ff9800;
+$theme_shade: #ffe0b2;
+$theme_excel: #00C851;
+
+.logo_bg{
+    background-image: url('../../assets/images/maple.png');
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: 35px;
+    // cursor: pointer;
+}
+
+.custom_theme_bg{
+    background-color: white;
+    color: $theme_dark;
+    z-index: 100;
+    
+}
+
+.custom_theme_color{
+    color: $theme_color;
+}
+
+.custom_theme_btn{
+    background: $theme_color;
+    color: white;
+    &:hover,
+    &:focus{
+        background-color: $theme_dark;
+    }
+}
+
+.custom_success_btn{
+    background: $theme_excel;
+    color: white;
+}
+
+::selection { 
+    background: #ccf;
+}
+
+.header_icon{
+    color: $theme_dark;
+    cursor: pointer;
+}
+
+.my_card{
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin-top: 50px;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: background-color 1s; /* For Safari 3.1 to 6.0 */
+    transition: background-color 1s;
+    &:hover{
+        background-color: #efefef;
+    }
+}
+
+.card_name{
+    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-transform: uppercase;
+    color: #666;
+    letter-spacing: 3px;
+}
+
+.card_title{
+    font-size: 15px;
+    color: #999;
+    letter-spacing: 2px;
+}
+
+.card_company{
+    font-size: 15px;
+    color: #666;
+    letter-spacing: 2px;
+}
+
+.card_count{
+    font-size: 14px;
+    color: red;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.card_count_title{
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+.img_top{
+    max-width: 100px;
+    margin-top: -70px;
+}

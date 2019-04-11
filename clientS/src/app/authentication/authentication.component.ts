@@ -27,7 +27,7 @@ export class AuthenticationComponent implements OnInit {
     console.log('Loaded Login!');
 
     this.form = fb.group({
-      loginid: ['', [Validators.required, Validators.minLength(6), Validators.pattern('^[a-zA-Z]+[a-zA-Z0-9]*')]],
+      loginid: ['', [Validators.required, Validators.minLength(6), Validators.pattern('^[a-zA-Z_]+[a-zA-Z0-9_-]*')]],
       password: ['', [Validators.required, Validators.minLength(8)]],
       password_again: [''],
       // sku: ['', [Validators.required, skuValidator]]

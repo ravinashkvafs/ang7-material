@@ -6,7 +6,7 @@ import { SharedMaterialModule } from './shared-material.module';
 import { SearchPipe } from './pipes/search.pipe';
 import { RevenueDialogComponent } from './revenue-dialog/revenue-dialog.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SchedulerDialogComponent } from './scheduler-dialog/scheduler-dialog.component';
 
 @NgModule({
@@ -26,6 +26,7 @@ import { SchedulerDialogComponent } from './scheduler-dialog/scheduler-dialog.co
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     SharedMaterialModule,
     FlexLayoutModule
   ],

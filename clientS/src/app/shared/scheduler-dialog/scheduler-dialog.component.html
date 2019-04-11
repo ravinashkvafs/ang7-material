@@ -8,18 +8,33 @@
   </div>
 </div>
 
-<div fxLayout fxLayoutAlign="center center" *ngIf="!type">
-  <span class="event" (mouseenter)="showA=true" (mouseleave)="showA=false" (click)="type='anniversary'">
+<div fxLayout fxLayoutAlign="center center" *ngIf="!type" class="section">
+  <span class="event" (click)="eventSelect('anniversary')">
     <i class="material-icons event-circle"> cake </i>
   </span>
-  <span class="event" (mouseenter)="showE=true" (mouseleave)="showE=false" (click)="type='event'">
+  <span class="event" (click)="eventSelect('event')">
     <i class="material-icons event-circle"> event </i>
   </span>
 </div>
 
-<div fxLayout fxLayoutAlign="center center" *ngIf="type">
-  <label for="input-file-id" class="input-file-btn">
-    <i class="material-icons" style="margin: 0px auto -30px auto;"> attachment </i> Choose Files
+<div fxLayout fxLayoutAlign="center center" *ngIf="type" class="section">
+  <form>
+    <form [formGroup]="form" fxLayout="column wrap" style="padding: 20px;" (submit)="doLogin()">
+
+      <mat-form-field appearance="outline">
+        <input matInput [matDatepicker]="picker" formControlName="dob" placeholder="DOB" (click)="picker.open()"
+          disabled>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker disabled="false"></mat-datepicker>
+      </mat-form-field>
+
+    </form>
+  </form>
+</div>
+
+<!-- <div fxLayout fxLayoutAlign="center center" *ngIf="type" class="section">
+  <label for="input-file-id" class="input-file-btn" style="font-size: 20px; line-height: 20px;">
+    <i class="material-icons attachment"> attachment </i> Choose Files
   </label>
   <input id="input-file-id" multiple type="file" style="visibility: hidden; position: absolute;" />
-</div>
+</div> -->

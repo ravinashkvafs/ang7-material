@@ -6,11 +6,11 @@
 
       <div fxFlex="50" fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="10px">
 
-        <div fxFlex="1 0 auto" fxFlex.gt-sm="60" fxFlex.lt-md="50" fxLayout fxLayoutAlign="center end"
+        <div fxFlex="1 1 auto" fxFlex.gt-sm="60" fxFlex.lt-md="50" fxLayout fxLayoutAlign="center end"
           class="my_card my_card1" (mouseenter)="e1=true" (mouseleave)="e1=false" [routerLink]="['/events']">
           <span *ngIf="e1" class="text_tag">Events & Anniversaries</span>
         </div>
-        <div fxFlex="1 0 auto" fxLayout fxLayoutAlign="center end" class="my_card my_card2" (mouseenter)="e2=true"
+        <div fxFlex="1 1 auto" fxLayout fxLayoutAlign="center end" class="my_card my_card2" (mouseenter)="e2=true"
           (mouseleave)="e2=false" [routerLink]="['/schedules']">
           <span *ngIf="e2" class="text_tag">Schedules</span>
         </div>
@@ -19,20 +19,20 @@
 
       <div fxFlex="50" fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="10px">
 
-        <div fxFlex="1 0 auto" fxFlex.gt-sm="40" fxFlex.lt-md="50" fxLayout fxLayoutAlign="center end"
+        <div fxFlex="1 1 auto" fxFlex.gt-sm="40" fxFlex.lt-md="50" fxLayout fxLayoutAlign="center end"
           class="my_card my_card3" (mouseenter)="e3=true" (mouseleave)="e3=false" [routerLink]="['/users']">
           <span *ngIf="e3" class="text_tag">Members</span>
         </div>
-        <div fxFlex="1 0 auto" fxLayout fxLayoutAlign="center end" class="my_card my_card4" (mouseenter)="e4=true"
-          (mouseleave)="e4=false">
-          <span *ngIf="e4" class="text_tag">Events Analysis</span>
+        <div fxFlex="1 1 auto" fxLayout fxLayoutAlign="center end" class="my_card my_card4" (mouseenter)="e4=true"
+          (mouseleave)="e4=false" [routerLink]="['/attendance']">
+          <span *ngIf="e4" class="text_tag">Attendance</span>
         </div>
 
       </div>
 
     </div>
 
-    <div fxFlex="1 0 auto" fxLayout fxLayoutAlign="center end" class="my_card my_card5" (mouseenter)="e5=true"
+    <div fxFlex="1 1 auto" fxLayout fxLayoutAlign="center end" class="my_card my_card5" (mouseenter)="e5=true"
       (mouseleave)="e5=false" [routerLink]="['/revenue']">
       <span *ngIf="e5" class="text_tag">Revenue Management</span>
     </div>

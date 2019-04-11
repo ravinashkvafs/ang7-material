@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { AuthGuardService } from './authentication/auth-guard.service';
+import { AttendanceModule } from './attendance/attendance.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AuthGuardService } from './authentication/auth-guard.service';
     AppMaterialModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    AttendanceModule
   ],
   providers: [AuthGuardService],
   bootstrap: [AppComponent]

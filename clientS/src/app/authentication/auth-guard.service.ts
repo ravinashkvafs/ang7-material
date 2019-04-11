@@ -7,7 +7,7 @@ export class AuthGuardService implements CanLoad {
 
   constructor(private route: Router, private authS: AuthenticationService) { }
 
-  canLoad() {
-    return this.authS.isAuth() ? true : false;
+  canLoad(): any {
+    return this.authS.isAuth();
   }
 }

@@ -1,0 +1,55 @@
+<mat-toolbar class="custom_theme_bg" fxLayout="row wrap" fxLayoutAlign="space-between center">
+  <div fxFlex="50" fxFlex="1 1 auto" fxLayout fxLayoutAlign="start center">
+    <div fxFill class="logo_bg">
+      <span style="padding: 0px 10px;"></span>
+    </div>
+  </div>
+  <div fxFlex="50" fxFlex="1 1 auto" fxLayout fxLayoutAlign="end center">
+    <mat-icon class="header_icon">dehaze</mat-icon>
+  </div>
+</mat-toolbar>
+
+<div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutAlign="center center"
+  style="border: 1px solid red; height: 90%;">
+
+  <div fxFlex.gt-sm="25" fxFlex.lt-md="100" style="border: 1px solid black; height: 100%; padding: 1rem;">
+
+    <div fxLayout="column nowrap" fxLayoutAlign="space-evenly center" fxLayoutGap="10px" fxGrow="2" fxShrink="0"
+      class="my_card mat-elevation-z2">
+      <div>
+        <span><img src="../../assets//images/default_man.png" class="img_top"></span>
+      </div>
+      <div>
+        <div style="padding: 0.2rem 0px;">
+          <span class="card_name">Avinash Sharma</span>
+        </div>
+        <div style="padding: 0.2rem 0px;">
+          <span class="card_title">Software Engineer</span>
+        </div>
+        <div style="padding: 0.2rem 0px;">
+          <span class="card_company">V5 GLobal Services</span>
+        </div>
+      </div>
+      <div fxFill>
+        <hr style="border-color: #eee;">
+      </div>
+      <div fxFill fxLayout fxLayoutGap="0.4rem">
+        <div fxFlex="50">
+          <span class="card_count_title">Remaining</span><br>
+          <span class="card_count">6789</span>
+        </div>
+        <div fxFlex="50">
+          <span class="card_count_title">Spent</span><br>
+          <span class="card_count">56789</span>
+        </div>
+      </div>
+      <div fxFill>
+        <button mat-flat-button class="custom_theme_btn" (click)="addExpenses(user)">Expenses</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div fxFlex.gt-sm="75" fxFlex.lt-md="100" style="border: 1px solid black; height: 100%;">fg</div>
+
+</div>
