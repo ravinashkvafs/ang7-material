@@ -17,6 +17,7 @@ import { Router } from '@angular/router';
 })
 export class AuthenticationComponent implements OnInit {
   form: any;
+  visible: any;
   view: string = 'login';
   registration_fields = [
     { field: 'fullname', default: '', validation: [Validators.required, Validators.minLength(3)] },
@@ -27,7 +28,7 @@ export class AuthenticationComponent implements OnInit {
     console.log('Loaded Login!');
 
     this.form = fb.group({
-      loginid: ['', [Validators.required, Validators.minLength(6), Validators.pattern('^[a-zA-Z_]+[a-zA-Z0-9_-]*')]],
+      emailid: ['', [Validators.required, Validators.minLength(6), Validators.pattern('^[a-zA-Z0-9_.$#&!-,^*+=]+@[a-zA-Z0-9]+[.][a-zA-Z.]+$')]],
       password: ['', [Validators.required, Validators.minLength(8)]],
       password_again: [''],
       // sku: ['', [Validators.required, skuValidator]]
@@ -75,9 +76,9 @@ export class AuthenticationComponent implements OnInit {
       case 'login':
         this.authS.doLogin(this.form.value)
           .subscribe(response => {
-            console.log(response);
+            // console.log(response);
             this.authS.saveToken(response['data']['token']);
-            this.router.navigate(['blog']);
+            this.router.navigate(['attendance']);
           }, err => {
             console.log(err.error);
             this.openDialog(err.error.message, false);
@@ -86,9 +87,9 @@ export class AuthenticationComponent implements OnInit {
       case 'register':
         this.authS.doRegister(this.form.value)
           .subscribe(response => {
-            console.log(response);
+            // console.log(response);
             this.authS.saveToken(response['data']['token']);
-            this.router.navigate(['rest']);
+            this.router.navigate(['attendance']);
           }, err => {
             console.log(err.error);
             this.openDialog(err.error.message, false);

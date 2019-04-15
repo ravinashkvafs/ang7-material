@@ -8,18 +8,19 @@ const bcrypt = require('bcrypt-nodejs');
 const dateFormat = require('../utility/date_format');
 
 const UserSchema = new mongoose.Schema({
-    loginid: { type: String, required: true, lowercase: true, unique: true, trim: true, index: true },
+    emailid: { type: String, required: true, lowercase: true, unique: true, trim: true, index: true },
     password: { type: String, required: true, trim: true },
     fullname: { type: String, required: true, trim: true },
     email: { type: String, lowercase: true, trim: true },
     mobile: { type: String, lowercase: true, trim: true },
+    gender: { type: String, lowercase: true, trim: true },
     role: {
         admin: { type: Boolean, default: false }
     },
     designation: { type: String, lowercase: true, trim: true },
-    isActive: { type: Boolean, default: true },
-    isExit: { type: Boolean, default: false },
-    doj: { type: Object, default: dateFormat.now }
+    is_active: { type: Boolean, default: true },
+    doj: { type: Object, default: dateFormat.now },
+    project_code: { type: String, required: true, trim: true, lowercase: true }
 }, { timestamps: true });
 
 UserSchema.methods.comparePassword = function (newPassword, cb) {

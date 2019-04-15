@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  uri: 'http://localhost:9273'
+  uri: 'http://localhost:9273',
+  token_name: 'ToKeN'
 };
 
 /*

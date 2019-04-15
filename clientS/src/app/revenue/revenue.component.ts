@@ -39,6 +39,7 @@ export class RevenueComponent implements OnInit {
 
   }
 
+  userSearch: any;
   tabs: Array<object> = [
     { icon: 'pie_chart', title: 'Total Remaining', count: 312, dynamic: 0 },
     { icon: 'monetization_on', title: 'Total Spent', count: 3426, dynamic: 0 },

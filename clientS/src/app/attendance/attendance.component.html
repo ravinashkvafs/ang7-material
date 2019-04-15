@@ -1,55 +1,178 @@
 <mat-toolbar class="custom_theme_bg" fxLayout="row wrap" fxLayoutAlign="space-between center">
-  <div fxFlex="50" fxFlex="1 1 auto" fxLayout fxLayoutAlign="start center">
+  <div fxFlex="1 1 auto" fxFlex="50" fxLayout fxLayoutAlign="start center">
     <div fxFill class="logo_bg">
       <span style="padding: 0px 10px;"></span>
     </div>
   </div>
-  <div fxFlex="50" fxFlex="1 1 auto" fxLayout fxLayoutAlign="end center">
+  <div fxFlex="1 1 auto" fxFlex="50" fxLayout fxLayoutAlign="end center">
     <mat-icon class="header_icon">dehaze</mat-icon>
   </div>
 </mat-toolbar>
 
-<div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutAlign="center center"
-  style="height: 90%;background-color: #f7f7ff;">
+<div fxLayout fxLayoutAlign="center center" *ngIf="loading" style="min-height: 590px;">
+  Loading...
+</div>
 
-  <div fxFlex.gt-sm="22" fxFlex.lt-md="100" fxLayout fxLayoutAlign="center start" style="height: 100%; padding: 1rem;">
+<div fxLayout.gt-sm="row" fxLayout.lt-md="column" class="my_body" *ngIf="!loading">
 
-    <div fxLayout="column nowrap" fxLayoutAlign="space-evenly center" fxLayoutGap="10px" fxGrow="2" fxShrink="0"
-      class="my_card mat-elevation-z2">
+  <div fxFlex.gt-sm="22" fxFlex.lt-md="100" style="padding: 1rem;">
+
+    <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="10px" class="my_card mat-elevation-z2">
       <div>
-        <span><img src="../../assets//images/default_man.png" class="img_top"></span>
+        <span><img [src]="'../../assets/images/'+(userObj.gender=='male'?'default_man.png':'default_woman.png')"
+            class="img_top"></span>
       </div>
       <div>
         <div style="padding: 0.2rem 0px;">
-          <span class="card_name">Avinash Sharma</span>
+          <span class="card_name">{{userObj.fullname}}</span>
         </div>
         <div style="padding: 0.2rem 0px;">
-          <span class="card_title">Software Engineer</span>
+          <span class="card_title">{{userObj.designation}}</span>
         </div>
-        <div style="padding: 0.2rem 0px;">
+        <!-- <div style="padding: 0.2rem 0px;">
           <span class="card_company">V5 GLobal Services</span>
-        </div>
+        </div> -->
       </div>
+
       <div fxFill>
-        <hr style="border-color: #eee;">
+        <hr style="border-color: #f5f5f5;">
       </div>
-      <div fxFill fxLayout fxLayoutGap="0.4rem">
-        <div fxFlex="50">
-          <span class="card_count_title">Remaining</span><br>
-          <span class="card_count">6789</span>
-        </div>
-        <div fxFlex="50">
-          <span class="card_count_title">Spent</span><br>
-          <span class="card_count">56789</span>
-        </div>
-      </div>
+
       <div fxFill>
-        <button mat-flat-button class="custom_theme_btn" (click)="addExpenses(user)">Expenses</button>
+        <mat-nav-list>
+          <a mat-list-item>
+            <mat-icon class="custom_theme_color">person</mat-icon>&nbsp;&nbsp;
+            <span class="snav-caption">View Attendance</span>
+          </a>
+        </mat-nav-list>
+
+      </div>
+
+    </div>
+
+    <div style="margin-top: 1.5rem;">
+      <button mat-flat-button class="custom_theme_btn" style="width: 100%;" (click)="markIn()"
+        *ngIf="!found_attendance">Clock-in</button>
+
+      <button mat-flat-button class="custom_theme_btn" style="width: 100%;" (click)="markOut()"
+        *ngIf="found_attendance">Clock-out</button> </div>
+
+    <div fxLayout fxLayoutAlign="space-between center" style="margin-top: 1.5rem; color: #888;">
+
+      <mat-icon *ngIf="isConnected" matTooltip="Active Internet">network_wifi</mat-icon>
+      <mat-icon *ngIf="!isConnected" matTooltip="Inctive Internet">signal_wifi_off</mat-icon>
+
+      <mat-icon *ngIf="coords && coords['latitude']" matTooltip="Active GPS">location_on</mat-icon>
+      <mat-icon *ngIf="!(coords && coords['latitude'])" matTooltip="Inactive GPS">location_off</mat-icon>
+
+    </div>
+
+    <!-- <div>
+      <button (click)="downloadReports()">downloadReports</button>
+    </div> -->
+
+  </div>
+
+  <div fxFlex.gt-sm="78" fxFlex.lt-md="100" fxLayout="column" style="padding: 1rem;">
+
+    <div fxLayout fxLayoutAlign="space-between center" style="padding: 1.2rem;">
+      <div class="head">Your Attendance for 2019-Apr</div>
+    </div>
+
+    <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutAlign="center center"
+      style="padding: 1.2rem; border-top: 1px solid #eee;">
+
+      <div fxFlex="50" fxLayout="column" fxLayoutAlign="start start">
+
+        <div class="head_title">Total</div>
+
+        <div fxFill fxLayout="row" fxLayoutAlign="space-evenly center">
+
+          <div fxLayout="column">
+            <div class="sub_count">{{days_count}}</div>
+            <div>Days</div>
+          </div>
+          <div fxLayout="column">
+            <div class="sub_count">-</div>
+            <div>Present Days</div>
+          </div>
+          <div fxLayout="column">
+            <div class="sub_count">-</div>
+            <div>Leave/Week-off Days</div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div fxFlex="50" fxLayout="column" fxLayoutAlign="start start">
+
+        <div class="head_title">Average</div>
+
+        <div fxFill fxLayout="row" fxLayoutAlign="space-evenly center">
+
+          <div fxLayout="column">
+            <div class="sub_count">-</div>
+            <div>Expected Hours</div>
+          </div>
+          <div fxLayout="column">
+            <div class="sub_count">-</div>
+            <div>Total Hours</div>
+          </div>
+          <div fxLayout="column">
+            <div class="sub_count">-</div>
+            <div>Average Hours</div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="calender">
+      <!-- HEADER -->
+      <div class="calender_header" fxLayout="row wrap" fxLayoutAlign="space-between center">
+        <div>
+          <span class="month">
+            <span
+              class="sub_month">{{(today | date:'MMMM').substr(0,3)}}</span>{{(today | date:'MMMM').substr(3)}}</span>
+
+        </div>
+        <div fxLayout="column" fxLayoutAlign="center center">
+          <div fxLayout="row nowrap" fxLayoutAlign="space-between center">
+            <!-- <div class="arrow" (click)="prevMonth()">
+              <i class="material-icons"> keyboard_arrow_left </i>
+            </div>
+            <div class="arrow" (click)="nextMonth()">
+              <i class="material-icons"> keyboard_arrow_right </i>
+            </div> -->
+          </div>
+          <div>
+            <span class="year">{{today | date:'yyyy'}}</span>
+          </div>
+        </div>
+      </div>
+      <!-- BODY -->
+      <div class="calender_body" fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <div fxFill fxLayout="row wrap" fxLayoutAlign="space-between center">
+
+          <div fxFlex="13" fxLayout="column" fxLayoutAlign="space-around center" *ngFor=" let day of weekdays">
+            {{day}}
+          </div>
+
+          <div fxFlex="13" fxLayout="column" fxLayoutAlign="space-around center" *ngFor=" let day of days; index as i"
+            class="day_card">
+            <span class="day">{{day}}</span>
+            <!-- [class.sub_day]="i%3==0" -->
+            <span fxFill *ngIf="checkEventExists(i)" [ngClass]="checkEventExistsAtDate(i)['class']">
+              {{checkEventExistsAtDate(i)['value']}}
+            </span>
+          </div>
+        </div>
       </div>
     </div>
 
   </div>
-
-  <div fxFlex.gt-sm="78" fxFlex.lt-md="100" style="height: 100%;">fg</div>
 
 </div>

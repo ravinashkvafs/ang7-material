@@ -16,6 +16,9 @@ export class OthersComponent {
   }
 
   panelOpenState = false;
+  disabled: any;
+  color: any;
+  checked: any;
 
   //Dialog
   openDialog() {

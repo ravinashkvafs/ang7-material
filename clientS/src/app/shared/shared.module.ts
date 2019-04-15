@@ -8,6 +8,8 @@ import { RevenueDialogComponent } from './revenue-dialog/revenue-dialog.componen
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SchedulerDialogComponent } from './scheduler-dialog/scheduler-dialog.component';
+import { HttpConfigInterceptor } from './http.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { SchedulerDialogComponent } from './scheduler-dialog/scheduler-dialog.co
     SharedMaterialModule,
     FlexLayoutModule
   ],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true }],
   exports: [
     SearchPipe
   ]

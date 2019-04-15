@@ -4,9 +4,9 @@
   "description": "my_product",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "start": "ts-node-dev server"
+    "start": "ts-node-dev server",
+    "restart": "node dist/server.js"
   },
   "repository": {
     "type": "git",

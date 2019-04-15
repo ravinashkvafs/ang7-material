@@ -12,6 +12,7 @@ export class UsersComponent implements OnInit {
   ngOnInit() {
   }
 
+  userSearch:any;
   userList: any = [
     { pic: '', name: 'Avinash Sharma', designation: 'Software Engineer', company: '@V5', gender: 'male' },
     { pic: '', name: 'Amit Dhiman', designation: 'Software Engineer', company: '@V5', gender: 'male' },

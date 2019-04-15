@@ -4,13 +4,14 @@ import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 
 const baseUrl = environment.uri;
+const token_key = environment.token_name;
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService implements OnInit {
-  token_key: string = 'ToKeN';
-  headers: Object = { headers: { 'ToKeN': '' } };
+
+  // headers: Object = { headers: { 'Authorization': '' } };
   isLoggedIn: Boolean = false;
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -28,22 +29,27 @@ export class AuthenticationService implements OnInit {
   }
 
   saveToken(token) {
-    localStorage.setItem(this.token_key, token);
+    // token = `Bearer ${token}`
+    localStorage.setItem(token_key, token);
     this.isLoggedIn = true;
-    this.headers['headers'][this.token_key] = token;
+    // this.headers['headers'][token_key] = token;
     this.router.navigate(['/dashboard']);
   }
 
   clearStorage(token) {
     localStorage.clear();
     this.isLoggedIn = false;
-    this.headers['headers'][this.token_key] = undefined;
+    // this.headers['headers'][token_key] = undefined;
     this.router.navigate(['/']);
   }
 
+  giveUserToken() {
+    return localStorage.getItem(token_key);
+  }
+
   loadCredentials() {
-    if (localStorage.getItem(this.token_key)) {
-      this.headers['headers'][this.token_key] = localStorage.getItem(this.token_key);
+    if (localStorage.getItem(token_key)) {
+      // this.headers['headers'][token_key] = localStorage.getItem(token_key);
       this.isLoggedIn = true;
     }
     else {
@@ -53,7 +59,6 @@ export class AuthenticationService implements OnInit {
 
   isAuth() {
     this.loadCredentials();
-    console.log(localStorage.getItem(this.token_key), this.isLoggedIn)
     return this.isLoggedIn;
   }
 }
